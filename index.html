@@ -12,12 +12,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="normalize.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="site-container">
+
 
 
             <!-------------------------------------------------------------------------
@@ -54,9 +56,11 @@
             </nav>
 
 
+
             <!-------------------------------------------------------------------------
                                     Mobile Header
             -------------------------------------------------------------------------->
+
 
 
 
@@ -127,27 +131,46 @@
             </main>
 
 
+
             <!-------------------------------------------------------------------------
                                     "Storage" Content
             -------------------------------------------------------------------------->
             <section class="storage-content-tablet-desktop">
-                
+                <h2 class="storage-title">Storage</h2>
             </section>
+
 
 
             <!-------------------------------------------------------------------------
                                     "About" Content
             -------------------------------------------------------------------------->
             <section class="about-content-tablet-desktop">
-
+                <h2 class="about-title">About</h2>
             </section>
+
 
 
             <!-------------------------------------------------------------------------
                             Tablet and Desktop "Add Book" Container
             -------------------------------------------------------------------------->
             <div class="add-book-container-tablet-desktop">
-                <input type="text" name="add-book-title-input" class="add-book-title-input" id="add-book-title-input" placeholder="Title" required>
+                <input type="text" name="add-book-title-input" class="add-book-title-input" id="add-book-title-input" placeholder="Title">
+                <input type="text" name="add-book-author-input" class="add-book-author-input" id="add-book-author-input" placeholder="Author">
+                <select name="add-book-status-input" id="add-book-status-input" class="add-book-status-input">
+                    <option value="" selected disabled hidden>Status</option>
+                    <option value="completed">Completed</option>
+                    <option value="currently-reading">Currently Reading</option>
+                    <option value="abandoned">Abandoned</option>
+                    <option value="not-begun">Not Begun</option>
+                </select>
+                <div class="rating">
+                    <span class="rating__result"></span>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+              </div>
             </div>
 
 
