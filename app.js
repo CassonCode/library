@@ -1,7 +1,7 @@
 const ratingStars = [...document.getElementsByClassName("rating__star")];
 const ratingResult = document.querySelector(".rating__result");
 
-printRatingResult(ratingResult);
+// printRatingResult(ratingResult);
 
 function executeRating(stars, result) {
    const starClassActive = "rating__star fas fa-star";
@@ -13,10 +13,10 @@ function executeRating(stars, result) {
          i = stars.indexOf(star);
 
          if (star.className.indexOf(starClassUnactive) !== -1) {
-            printRatingResult(result, i + 1);
+            // printRatingResult(result, i + 1);
             for (i; i >= 0; --i) stars[i].className = starClassActive;
          } else {
-            printRatingResult(result, i);
+            // printRatingResult(result, i);
             for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
          }
       };
