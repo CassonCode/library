@@ -22,9 +22,9 @@
 
 
 
-            <!-------------------------------------------------------------------------
-                                    Tablet and Desktop Menu
-            -------------------------------------------------------------------------->
+            <!--(Tablet, Desktop)------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                Menu-->
+
             <nav class="menu-tablet-desktop">
                 <button class="close-menu tablet">
                     <!--    svg    -->
@@ -48,7 +48,7 @@
                             Built by
                             <a href="https://github.com/CassonCode" class="footer-github-profile-link-tablet-desktop" target="_blank" rel="noopener">CassonCode</a>
                         </div>
-                        <a href="https://github.com/CassonCode/library" class="github-icon-container-tablet-desktop" target="_blank" rel="noopener">
+                        <a href="https://github.com/CassonCode/library" class="github-icon-container" target="_blank" rel="noopener">
                             <!--    svg    -->
                         </a>
                     </div>
@@ -57,24 +57,38 @@
 
 
 
-            <!-------------------------------------------------------------------------
-                                    Mobile Header
-            -------------------------------------------------------------------------->
+            <!--(Mobile)----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                Header-->
+
+            <header class="header-mobile mobile">
+                <a href="https://github.com/CassonCode/library" class="github-icon-container" target="_blank" rel="noopener">
+                    <!--    svg    -->
+                </a>
+                <h2 class="mobile-title">ODIN Shelf</h2>
+                <button class="light-dark-mode">
+                    <!--    svg    -->
+                </button>
+            </header>
 
 
 
+            <!--(Tablet, Desktop)------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                Menu/Theme Header-->
 
-            <!-------------------------------------------------------------------------
-                                    "Home" Content
-            -------------------------------------------------------------------------->
             <div class="header-container-tablet-desktop">
                 <button class="hamburger-menu tablet">
                     <!--    svg    -->
                 </button>
-                <button class="light-dark-mode-tablet-desktop">
+                <button class="light-dark-mode">
                     <!--    svg    -->
                 </button>
             </div>
+
+
+
+            <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                "Home" Content-->
+
             <main class="home-content-tablet-desktop">
                 <div class="total-books-section tablet">
                     <div class="total-books-container">
@@ -132,27 +146,27 @@
 
 
 
-            <!-------------------------------------------------------------------------
-                                    "Storage" Content
-            -------------------------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                "Storage" Content-->
+
             <section class="storage-content-tablet-desktop">
                 <h2 class="storage-title">Storage</h2>
             </section>
 
 
 
-            <!-------------------------------------------------------------------------
-                                    "About" Content
-            -------------------------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                "About" Content-->
+
             <section class="about-content-tablet-desktop">
                 <h2 class="about-title">About</h2>
             </section>
 
 
 
-            <!-------------------------------------------------------------------------
-                            Tablet and Desktop "Add Book" Container
-            -------------------------------------------------------------------------->
+            <!--(Tablet, Desktop)-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                "Add Book" Container-->
+
             <div class="add-book-container-tablet-desktop">
                 <input type="text" name="add-book-title-input" class="add-book-title-input" id="add-book-title-input" placeholder="Title">
                 <input type="text" name="add-book-author-input" class="add-book-author-input" id="add-book-author-input" placeholder="Author">
@@ -171,7 +185,11 @@
                     <i class="rating__star far fa-star"></i>
                     <i class="rating__star far fa-star"></i>
               </div>
+              <input type="number" name="add-book-page-count-input" class="add-book-page-count-input" 
+                                   id="add-book-page-count-input" min="1" max="9999" placeholder="Page Count">
+              <button class="add-book-button"><span class="add-book-button-icon"><!--    svg    --></span>Add Book</button>
             </div>
+
 
 
         </div>
