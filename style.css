@@ -1,6 +1,6 @@
-.rating {
+.add-book-rating-tablet-desktop {
     position: relative;
-    width: 180px;
+    width: 150px;
     background: transparent;
     display: flex;
     justify-content: center;
@@ -8,8 +8,8 @@
     gap: .3em;
     padding: 5px;
     overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 0 2px #b3acac;
+    /* border-radius: 20px;
+    box-shadow: 0 0 2px #b3acac; */
  }
  
  .rating__result {
