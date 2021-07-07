@@ -15,9 +15,10 @@ function executeRating(stars, result) {
          if (star.className.indexOf(starClassUnactive) !== -1) {
             // printRatingResult(result, i + 1);
             for (i; i >= 0; --i) stars[i].className = starClassActive;
-         } else {
+         } 
+         else {
             // printRatingResult(result, i);
-            for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
+            for (i; i < starsLength; ++i) stars[i+1].className = starClassUnactive;
          }
       };
    });
