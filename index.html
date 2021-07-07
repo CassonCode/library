@@ -87,9 +87,28 @@
                 </div>
                 <div class="total-books-section desktop">
                     <div class="filter-container">
-                        
+                        <button class="filter-all">All</button>
+                        <button class="filter-completed">Completed: <span class="filter-number filter-completed-number">6</span></button>
+                        <button class="filter-currently-reading">Currently Reading: <span class="filter-number filter-currently-reading-number">2</span></button>
+                        <button class="filter-abandoned">Abandoned: <span class="filter-number filter-abandoned-number">4</span></button>
+                        <button class="filter-not-begun">Not Begun: <span class="filter-number filter-not-begun-number">13</span></button>
                     </div>
-                    <div class="total-books-container"></div>
+                    <div class="total-books-container">
+                        <div class="total-books-text">Books</div>
+                        <div class="total-books-count">25</div>
+                    </div>
+                </div>
+                <div class="sort-and-delete-all-container tablet">
+                    <div class="sort-container">
+                        <select name="sort" class="sort" id="sort">
+                            <option value="date-added">Date Added</option>
+                            <option value="title">Title</option>
+                            <option value="author">Author</option>
+                            <option value="status">Status</option>
+                            <option value="rating">Rating</option>
+                            <option value="page-count">Page Count</option>
+                        </select>
+                    </div>
                 </div>
             </main>
 
