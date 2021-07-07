@@ -26,7 +26,7 @@
  .rating__star {
     font-size: 1.3em;
     cursor: pointer;
-    color: #bababa;   /*  6ABFC3  dabd18b2  */
+    color: #d8d8d8;   /*  d8d8d8  6ABFC3  dabd18b2  */
     transition: filter linear .3s;
  }
 
