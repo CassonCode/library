@@ -1,3 +1,5 @@
+
+// Change star rating based on user input
 const ratingStars = [...document.getElementsByClassName("rating__star")];
 const ratingResult = document.querySelector(".rating__result");
 
