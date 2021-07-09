@@ -1,12 +1,14 @@
 :root,
 :root.light {
    --background-color: #F6F6F6;
+   --menu-background-color: #ECECEC;
    --default-text-color: #6E6E6E;
 }
 
 :root.dark {
-   --background-color: #F6F6F6;
-   --default-text-color: #6E6E6E;
+   --background-color: #151515;
+   --menu-background-color: #242424;
+   --default-text-color: #fff;
 }
 
 
