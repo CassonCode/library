@@ -1,14 +1,24 @@
 :root,
 :root.light {
    --background-color: #F6F6F6;
-   --menu-background-color: #ECECEC;
+   --secondary-background-color: #ECECEC;
    --default-text-color: #6E6E6E;
+   --gold-color: #CE973E;
 }
 
 :root.dark {
    --background-color: #151515;
-   --menu-background-color: #242424;
+   --secondary-background-color: #242424;
    --default-text-color: #fff;
+}
+
+
+.header-mobile {
+   background-color: var(--secondary-background-color);
+}
+
+.mobile-title {
+   color: var(--gold-color);
 }
 
 
