@@ -1,3 +1,7 @@
+// Sets class for :root, specifically for switching between light and dark mode
+const setTheme = theme => document.documentElement.className = theme;
+
+
 
 // Change star rating based on user input
 const ratingStars = [...document.getElementsByClassName("rating__star")];
