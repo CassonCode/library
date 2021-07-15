@@ -1,10 +1,5 @@
-const headerMobile = document.querySelector(".header-mobile");
-const githubLogo = document.querySelector(".github-icon");
-
 // Sets class for :root, specifically for switching between light and dark mode
-const setTheme = (theme) => {
-   document.documentElement.className = theme;
-}
+const setTheme = theme => document.documentElement.className = theme;
 
 
 // Change star rating based on user input
