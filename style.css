@@ -1,3 +1,10 @@
+@font-face {
+   font-family: "Norse";
+   src: url("Fonts/Norse-Bold.otf") format("OpenType");
+}
+
+
+
 :root,
 :root.light {
    --background-color: #F6F6F6;
@@ -27,6 +34,7 @@
    background-color: var(--secondary-background-color);
    display: flex;
    justify-content: space-evenly;
+   max-height: 70px;
 }
 
 .github-icon-container {
@@ -44,6 +52,9 @@
 
 .mobile-title {
    color: var(--gold-color);
+   font-family: "Norse";
+   font-size: 50px;
+   margin-top: 5px;
 }
 
 .theme-button {
