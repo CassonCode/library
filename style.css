@@ -26,6 +26,7 @@
 .header-mobile {
    background-color: var(--secondary-background-color);
    display: flex;
+   justify-content: space-evenly;
 }
 
 .github-icon-container {
@@ -36,8 +37,9 @@
 
 .github-icon {
    display: block;
+   fill: var(--gold-color);
    margin: auto;
-   margin-top: 8px;
+   margin-top: 9px;
 }
 
 .mobile-title {
