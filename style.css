@@ -28,6 +28,18 @@
    display: flex;
 }
 
+.github-icon-container {
+   border-radius: 50%;
+   width: 67px;
+   height: 67px;
+}
+
+.github-icon {
+   display: block;
+   margin: auto;
+   margin-top: 8px;
+}
+
 .mobile-title {
    color: var(--gold-color);
 }
