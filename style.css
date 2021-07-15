@@ -25,10 +25,36 @@
 /* ---------------- Mobile --------------------------------------------------------------------------------------------------------------------- */
 .header-mobile {
    background-color: var(--secondary-background-color);
+   display: flex;
 }
 
 .mobile-title {
    color: var(--gold-color);
+}
+
+.theme-button {
+   border-radius: 50%;
+   border: none;
+   background-color: transparent;
+   width: 67px;
+   height: 67px;
+}
+
+.dark-mode-icon {
+   fill: var(--gold-color);
+   width: 40px;
+}
+
+.theme-button.light {
+   display: none;
+}
+
+.dark .theme-button.dark {
+   display: none;
+}
+
+.dark .theme-button.light {
+   display: block;
 }
 
 
