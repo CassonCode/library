@@ -47,7 +47,7 @@
    display: block;
    fill: var(--gold-color);
    margin: auto;
-   margin-top: 9px;
+   margin-top: 10px;
 }
 
 .mobile-title {
@@ -68,6 +68,11 @@
 .dark-mode-icon {
    fill: var(--gold-color);
    width: 40px;
+   margin-top: 5px;
+}
+
+.light-mode-icon {
+   margin-top: 5px;
 }
 
 .theme-button.light {
