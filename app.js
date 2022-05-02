@@ -10,7 +10,7 @@ const setTheme = theme => document.documentElement.className = theme;
 const ratingStars = [...document.getElementsByClassName("rating__star")];
 const ratingResult = document.querySelector(".rating__result");
 
-// printRatingResult(ratingResult);
+// printRatingResult(ratingResult);     ///////
 
 function executeRating(stars, result) {
    const starClassActive = "rating__star fas fa-star";
@@ -22,11 +22,11 @@ function executeRating(stars, result) {
          i = stars.indexOf(star);
 
          if (star.className.indexOf(starClassUnactive) !== -1) {
-            // printRatingResult(result, i + 1);
+             //printRatingResult(result, i + 1);        ////////
             for (i; i >= 0; --i) stars[i].className = starClassActive;
          } 
          else {
-            // printRatingResult(result, i);
+             //printRatingResult(result, i);        //////
             for (i; i < starsLength; ++i) stars[i+1].className = starClassUnactive;
          }
       };
@@ -53,7 +53,7 @@ executeRating(ratingStars, ratingResult);
 
 
 ///////////
-const menuButton = document.querySelector(".open-close-button");
+const menuButton = document.querySelector(".menu-button");
 
 menuButton.addEventListener("click", () => {
     (menuButton.classList.contains("open")) ? openMenu() : closeMenu();

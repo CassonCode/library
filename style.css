@@ -54,6 +54,10 @@
    margin-top: 10px;
 }
 
+.github-icon:hover {
+    fill: black;
+}
+
 .mobile-title {
    color: var(--gold-color);
    font-family: "Norse";
@@ -75,6 +79,10 @@
    margin-top: 5px;
 }
 
+.dark-mode-icon:hover {
+    opacity: 0.8;
+}
+
 .light-mode-icon {
    margin-top: 5px;
 }
@@ -90,6 +98,8 @@
 .dark .theme-button.light {
    display: block;
 }
+
+
 
 
 /* Stars */
@@ -139,7 +149,7 @@
 
 
 
-.open-close-button {
+.menu-button {
     background-color: white;
     border: none;
     outline: 1px solid red;
@@ -164,7 +174,7 @@
     transition-duration: 0.25s;
 }
 
-.open-close-button:hover {
+.menu-button:hover {
     background-color: white;
     cursor: pointer;
 }
