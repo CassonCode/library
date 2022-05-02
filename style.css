@@ -21,6 +21,7 @@
 
 
 
+
 /* ---------------- Hide Tablet and Desktop only elements ---------------------------------------------------------------------------------------*/
 .tablet-desktop {
    display: none;
@@ -35,6 +36,9 @@
    display: flex;
    justify-content: space-evenly;
    max-height: 70px;
+   -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 350ms linear;
 }
 
 .github-icon-container {
@@ -129,3 +133,37 @@
       filter: drop-shadow(1px 1px 4px gold); 
    } */
    
+
+
+
+
+
+
+.open-close-button {
+    background-color: white;
+    border: none;
+    outline: 1px solid red;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 50px;
+    margin: 100px;
+    padding: 0 0 1px 1px;
+    text-align: center;
+}
+
+.open {
+    transition-duration: 0.25s;
+}
+
+.close {
+    transform: rotate(-45deg);
+    transform-origin: center;
+    /* transition: transform; */
+    transition-duration: 0.25s;
+}
+
+.open-close-button:hover {
+    background-color: white;
+    cursor: pointer;
+}
