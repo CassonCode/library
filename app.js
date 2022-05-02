@@ -34,3 +34,24 @@ function printRatingResult(result, num = 0) {
 }
 
 executeRating(ratingStars, ratingResult);
+
+
+
+
+///////////
+const menuButton = document.querySelector(".open-close-button");
+
+menuButton.addEventListener("click", () => {
+    (menuButton.classList.contains("open")) ? openMenu() : closeMenu();
+    console.log(menuButton.classList);
+});
+
+function openMenu() {
+    menuButton.classList.add("close");
+    menuButton.classList.remove("open");
+}
+
+function closeMenu() {
+    menuButton.classList.add("open");
+    menuButton.classList.remove("close");
+}
