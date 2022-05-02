@@ -34,6 +34,16 @@ function printRatingResult(result, num = 0) {
 }
 
 executeRating(ratingStars, ratingResult);
+// Uncaught TypeError: stars[(i + 1)] is undefined
+// onclick http://127.0.0.1:5500/app.js:26
+// executeRating http://127.0.0.1:5500/app.js:17
+// executeRating http://127.0.0.1:5500/app.js:16
+// <anonymous> http://127.0.0.1:5500/app.js:36
+
+
+
+
+
 
 
 
