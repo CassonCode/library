@@ -8,7 +8,7 @@
 :root,
 :root.light {
    --background-color: #F6F6F6;
-   --secondary-background-color: #ECECEC;
+   --secondary-background-color: #ECECEC;   /*  #ECECEC  */
    --default-text-color: #6E6E6E;
    --gold-color: #CE973E;
 }
@@ -147,9 +147,10 @@
     height: 60px;
     border-radius: 50%;
     font-size: 50px;
-    margin: 100px;
+    /* margin: 100px; */
     padding: 0 0 1px 1px;
     text-align: center;
+    visibility: hidden;
 }
 
 .open {
