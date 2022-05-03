@@ -10,7 +10,8 @@
 
 :root,
 :root.light {
-   --light-background-color: #FFFDF3;
+   --background-color: #FFFDF3;
+   --opposite-background-color: #2b2b2b;
    /* --secondary-background-color: #ECECEC;    */
    --light-default-text-color: #6E6E6E;
    --gold-color: #CE973E;
@@ -18,8 +19,9 @@
 }
 
 :root.dark {
-   --dark-background-color: #1B1B1B;  /* 151515 */
-   --dark-secondary-background-color: #2B2B2B;   /* #242424 */
+   --background-color: #2b2b2b;  /* 151515 */
+   --dark-secondary-background-color: #171717;   /* #242424 */
+   --opposite-background-color: #FFFDF3;
    --dark-default-text-color: #fff;
 }
 
@@ -35,11 +37,25 @@
 ============================================================== */
 .main-content-container {
     padding: 15px;
-    background-color: var(--light-background-color);
+    background-color: var(--background-color);
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 350ms linear;
+}
+
+.header-container {
+    height: 20vh;
+}
+
+.mobile.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
 }
 
 .menu-button {
-    background-color: var(--light-background-color);
+    background-color: transparent;
     color: var(--blue-green-color);
     border: none;
     /* outline: 1px solid red; */
@@ -58,11 +74,41 @@
     transform-origin: center;
     /* transition: transform; */
     transition-duration: 0.25s;
-    color: var(--dark-background-color);
+    color: var(--opposite-background-color);
 }
 
 .mobile.title {
     font-family: 'Norse-Bold';
     color: var(--gold-color);
-    font-size: 24px;
+    font-size: 50px;
+    /* display: inline-block; */
+    /* text-align: center; */
 }
+
+.theme-button {
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    width: 65px;
+    height: 65px;
+    /* border: 1px solid red; */
+ }
+ .dark-mode-icon {
+    fill: var(--gold-color);
+    width: 40px;
+    /* border: 1px solid red; */
+
+    /* margin-top: 5px; */
+ }
+ .theme-button.light {
+    display: none;
+ }
+ .dark .theme-button.dark {
+    display: none;
+ }
+
+ .dark .theme-button.light {
+    display: block;
+ }
+
+ 
