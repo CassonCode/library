@@ -56,16 +56,16 @@ executeRating(ratingStars, ratingResult);
 const menuButton = document.querySelector(".menu-button");
 
 menuButton.addEventListener("click", () => {
-    (menuButton.classList.contains("open")) ? openMenu() : closeMenu();
+    (menuButton.classList.contains("open-menu")) ? openMenu() : closeMenu();
     console.log(menuButton.classList);
 });
 
 function openMenu() {
-    menuButton.classList.add("close");
-    menuButton.classList.remove("open");
+    menuButton.classList.add("close-menu");
+    menuButton.classList.remove("open-menu");
 }
 
 function closeMenu() {
-    menuButton.classList.add("open");
-    menuButton.classList.remove("close");
+    menuButton.classList.add("open-menu");
+    menuButton.classList.remove("close-menu");
 }
