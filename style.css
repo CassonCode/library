@@ -6,7 +6,13 @@
     font-family: "Norse-Bold";
     src: url("Fonts/Norse-Bold.otf") format("OpenType");
  }
+ @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+
+
+:root {
+    font-family: 'Roboto', sans-serif;
+}
 
 :root,
 :root.light {
@@ -38,9 +44,9 @@
 .main-content-container {
     padding: 15px 20px 0 20px;
     background-color: var(--background-color);
-    -webkit-transition: background-color 1000ms linear;
-    -ms-transition: background-color 1000ms linear;
-    transition: background-color 350ms linear;
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
 }
 
 .header-container {
@@ -52,11 +58,11 @@
 .mobile.navbar {
     display: flex;
     justify-content: space-between;
-    height: 10vh;
+    height: auto;
     align-items: center;
     border-bottom: 1px solid #bababa52;
     grid-row: 1 / 2;
-    padding-bottom: 15px;
+    margin-top: -15px;
 }
 
 .menu-button {
@@ -118,13 +124,24 @@
 
  
  .mobile.filter-sort-container {
-     display: flex;
-     justify-content: space-around;
-     align-items: center;
-     grid-row: 2 / 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-row: 2 / 3;
  }
 
- .mobile.filter-select {
-     font-size: 16px;
-     padding: 5px 15px;
+ .mobile.filter-select,
+ .mobile.sort-select,
+ .sort-high-low {
+    font-size: 16px;
+    background-color: var(--blue-green-color); 
+    border-radius: 4px;
+    border: none;
+    color: white;
+    text-align: center;
+ }
+
+ .mobile.filter-select,
+ .mobile.sort-select {
+    padding: 10px 15px;
  }
