@@ -42,7 +42,7 @@
     Mobile Header   =============================================
 ============================================================== */
 .main-content-container {
-    padding: 15px 20px 0 20px;
+    padding: 0px 20px 0 20px;
     background-color: var(--background-color);
     -webkit-transition: background-color 300ms linear;
     -ms-transition: background-color 300ms linear;
@@ -58,11 +58,10 @@
 .mobile.navbar {
     display: flex;
     justify-content: space-between;
-    height: auto;
+    /* height: auto; */
     align-items: center;
     border-bottom: 1px solid #bababa52;
     grid-row: 1 / 2;
-    margin-top: -15px;
 }
 
 .menu-button {
@@ -70,8 +69,8 @@
     color: var(--blue-green-color);
     border: none;
     /* outline: 1px solid red; */
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     /* font-size: 30px; */
     text-align: center;
@@ -106,7 +105,7 @@
     border-radius: 50%;
     border: none;
     background-color: transparent;
-    width: 40px;
+    width: 60px;
     height: auto;
     /* border: 1px solid red; */
  }
@@ -126,7 +125,7 @@
 
  .dark .theme-button.light {
     display: block;
-    width: 40px;
+    width: 60px;
  }
 
  
