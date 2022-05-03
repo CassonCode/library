@@ -226,48 +226,50 @@
     <!-- ===============================================================================================
             Sidebar / Menu    ==========================================================================
     ================================================================================================ -->
-    <div class="sidebar-menu-container">
+    <div class="sidebar-menu-container hide-menu">
         <h1 class="desktop title">ODIN Shelf</h1>
         <h1 class="mobile add-or-edit-book-title">Add New Book</h1>
-        <form action="" class="book-info-form">
-            <div class="title-input-container">
-                <label for="title-input">Title</label>
-                <input type="text" name="title-input" id="title-input" maxlength="50" required>
-            </div>
-            <div class="author-first-name-input-container">
-                <label for="author-first-name-input">Author First Name</label>
-                <input type="text" name="author-first-name-input" id="author-first-name-input" maxlength="50" required>
-            </div>
-            <div class="author-last-name-input-container">
-                <label for="author-last-name-input">Author Last Name</label>
-                <input type="text" name="author-last-name-input" id="author-last-name-input" maxlength="50" required>
-            </div>
-            <div class="status-dropdown-container">
-                <label for="status-dropdown">Status</label>
-                <select name="status-dropdown" id="status-dropdown" required>
-                    <option value="finished" selected>Finished</option>
-                    <option value="currently-reading">Currently Reading</option>
-                    <option value="abandoned">Abandoned</option>
-                    <option value="not-started">Not Started</option>
-                </select>
-            </div>
-            <div class="add-book-rating-container">
-                <span class="rating__result"></span>
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-          </div>
-            <div class="page-count-container">
-                <label for="page-count">Page Count</label>
-                <input type="number" name="page-count" id="page-count" min="1" max="15,000">
-            </div>
-            <div class="add-edit-button-container">
-                <input type="button" value="Add Book" class="add-book-button">
-                <input type="button" value="Edit Book" class="edit-book-button">
-            </div>
-        </form>
+        <div class="form-container">
+            <form action="" class="book-info-form">
+                <div class="title-input-container">
+                    <label for="title-input">Title</label>
+                    <input type="text" name="title-input" id="title-input" maxlength="50" required>
+                </div>
+                <div class="author-first-name-input-container">
+                    <label for="author-first-name-input">Author First Name</label>
+                    <input type="text" name="author-first-name-input" id="author-first-name-input" maxlength="50" required>
+                </div>
+                <div class="author-last-name-input-container">
+                    <label for="author-last-name-input">Author Last Name</label>
+                    <input type="text" name="author-last-name-input" id="author-last-name-input" maxlength="50" required>
+                </div>
+                <div class="status-dropdown-container">
+                    <label for="status-dropdown">Status</label>
+                    <select name="status-dropdown" id="status-dropdown" required>
+                        <option value="finished" selected>Finished</option>
+                        <option value="currently-reading">Currently Reading</option>
+                        <option value="abandoned">Abandoned</option>
+                        <option value="not-started">Not Started</option>
+                    </select>
+                </div>
+                <div class="add-book-rating-container">
+                    <span class="rating__result"></span>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+                    <i class="rating__star far fa-star"></i>
+              </div>
+                <div class="page-count-container">
+                    <label for="page-count">Page Count</label>
+                    <input type="number" name="page-count" id="page-count" min="1" max="15,000">
+                </div>
+                <div class="add-edit-button-container">
+                    <input type="button" value="Add Book" class="add-book-button">
+                    <input type="button" value="Edit Book" class="edit-book-button">
+                </div>
+            </form>
+        </div>
         <footer>
             <p class="footer-text">Built by</p>
             <a href="https://github.com/CassonCode" target="_blank" rel="noopener noreferrer" class="github-profile-link">CassonCode</a>
