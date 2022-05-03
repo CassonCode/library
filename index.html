@@ -162,15 +162,15 @@
         <form action="" class="book-info-form">
             <div class="title-input-container">
                 <label for="title-input">Title</label>
-                <input type="text" name="title-input" id="title-input" required>
+                <input type="text" name="title-input" id="title-input" maxlength="50" required>
             </div>
             <div class="author-first-name-input-container">
                 <label for="author-first-name-input">Author First Name</label>
-                <input type="text" name="author-first-name-input" id="author-first-name-input" required>
+                <input type="text" name="author-first-name-input" id="author-first-name-input" maxlength="50" required>
             </div>
             <div class="author-last-name-input-container">
                 <label for="author-last-name-input">Author Last Name</label>
-                <input type="text" name="author-last-name-input" id="author-last-name-input" required>
+                <input type="text" name="author-last-name-input" id="author-last-name-input" maxlength="50" required>
             </div>
             <div class="status-dropdown-container">
                 <label for="status-dropdown">Status</label>
@@ -194,8 +194,8 @@
                 <input type="number" name="page-count" id="page-count" min="1" max="15,000">
             </div>
             <div class="add-edit-button-container">
-                <input type="button" value="Add Book">
-                <input type="button" value="Edit Book">
+                <input type="button" value="Add Book" class="add-book-button">
+                <input type="button" value="Edit Book" class="edit-book-button">
             </div>
         </form>
         <footer>
