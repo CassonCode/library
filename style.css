@@ -36,7 +36,7 @@
     Mobile Design   =============================================
 ============================================================== */
 .main-content-container {
-    padding: 15px;
+    padding: 15px 20px 0 20px;
     background-color: var(--background-color);
     -webkit-transition: background-color 1000ms linear;
     -ms-transition: background-color 1000ms linear;
@@ -52,6 +52,7 @@
     justify-content: space-between;
     height: 10vh;
     align-items: center;
+    border-bottom: 1px solid #bababa52;
 }
 
 .menu-button {
@@ -112,3 +113,7 @@
  }
 
  
+ .mobile.filter-sort-container {
+     display: flex;
+     justify-content: space-around;
+ }
