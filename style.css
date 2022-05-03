@@ -72,8 +72,8 @@
     /* outline: 1px solid red; */
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    font-size: 30px;
+    /* border-radius: 50%; */
+    /* font-size: 30px; */
     text-align: center;
     /* visibility: hidden; */
     z-index: 100;
@@ -83,7 +83,7 @@
 }
 .close-menu {
     transform: rotate(45deg);
-    transform-origin: center;
+    /* transform-origin: center; */
     /* transition: transform; */
     transition-duration: 0.3s;
     color: var(--opposite-background-color);
