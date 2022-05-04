@@ -54,24 +54,25 @@ executeRating(ratingStars, ratingResult);
 
 //  Adds/Removes css classes that open/close menu
 const menuButton = document.querySelector(".menu-button");
+const menuIcon = document.querySelector(".menu-icon");
 const mobileSidebar = document.querySelector(".sidebar-menu-container");
 
 menuButton.addEventListener("click", () => {
-    (menuButton.classList.contains("open-menu")) ? openMenu() : closeMenu();
+    (menuIcon.classList.contains("open-menu")) ? openMenu() : closeMenu();
     // (mobileSidebar.classList.contains("show-menu")) ? closeMenu() : openMenu();
-    console.log(menuButton.classList);
+    console.log(menuIcon.classList);
 });
 
 function openMenu() {
-    menuButton.classList.add("close-menu");
-    menuButton.classList.remove("open-menu");
+    menuIcon.classList.add("close-menu");
+    menuIcon.classList.remove("open-menu");
     mobileSidebar.classList.add("show-menu");
     mobileSidebar.classList.remove("hide-menu");
 }
 
 function closeMenu() {
-    menuButton.classList.add("open-menu");
-    menuButton.classList.remove("close-menu");
+    menuIcon.classList.add("open-menu");
+    menuIcon.classList.remove("close-menu");
     mobileSidebar.classList.add("hide-menu");
     mobileSidebar.classList.remove("show-menu");
 }
