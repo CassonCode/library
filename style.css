@@ -22,6 +22,7 @@
    --light-default-text-color: #6E6E6E;
    --gold-color: #CE973E;
    --blue-green-color: #6ABFC3;
+   --gray-supp: #999999;
 }
 
 :root.dark {
@@ -29,6 +30,7 @@
    --dark-secondary-background-color: #171717;   /* #242424 */
    --opposite-background-color: #FFFDF3;
    --dark-default-text-color: #fff;
+   --gray-supp: #bababa;
 }
 
 
@@ -44,13 +46,15 @@
 .main-content-container {
     padding: 0px 20px 0 20px;
     background-color: var(--background-color);
+    display: grid;
+    grid-template-rows: 20vh auto;
     -webkit-transition: background-color 300ms linear;
     -ms-transition: background-color 300ms linear;
     transition: background-color 300ms linear;
 }
 
 .header-container {
-    height: 20vh;
+    /* height: 20vh; */
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
@@ -135,6 +139,7 @@
     justify-content: space-around;
     align-items: center;
     grid-row: 2 / 3;
+    border-bottom: 2px solid var(--gray-supp);
  }
 
  .mobile.filter-select,
@@ -184,3 +189,14 @@
      display: grid;
      align-items: center;
  }
+
+
+
+
+/* ==============================================================
+    Books Section   =============================================
+============================================================== */
+.books-section {
+    background-color: white;
+    height: 80vh;       /*---TEMPORARY---*/
+} 
