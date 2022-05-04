@@ -48,9 +48,9 @@
     background-color: var(--background-color);
     display: grid;
     grid-template-rows: min-content min-content;     /*  min(20vh) auto  */
-    -webkit-transition: background-color 300ms linear;
-    -ms-transition: background-color 300ms linear;
-    transition: background-color 300ms linear;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
     /* position: sticky; */
 }
 
@@ -104,9 +104,9 @@
     color: var(--gold-color);
     font-size: 40px;
     /* margin-top: 10px; */
-    -webkit-transition: color 300ms linear;
-    -ms-transition: color 300ms linear;
-    transition: color 300ms linear;
+    -webkit-transition: color 200ms linear;
+    -ms-transition: color 200ms linear;
+    transition: color 200ms linear;
 }
 .dark .mobile.title {
     color: var(--default-text-color);
@@ -175,7 +175,16 @@ font-weight: bold;
 padding: 15px 10px;
 font-size: 16px;
 height: 50px;
+outline: none;
 }
+#mobile-filter-select:focus,
+#mobile-sort-select:focus,
+#mobile-filter-select:active,
+#mobile-sort-select:active {
+    outline: none;
+}
+
+
 
 .sort-normal-reverse-button {
 background-color: transparent;
@@ -223,6 +232,12 @@ transition-duration: 0.3s;
     transform: translateX(0);
 }
 
+
+.mobile.add-or-edit-book-title {
+    text-align: center;
+    font-size: 40px;
+}
+
  .form-container {
      display: grid;
      align-items: center;
@@ -237,9 +252,9 @@ transition-duration: 0.3s;
 .books-section {
     background-color: var(--secondary-background-color);
     height: 80vh;       /*---TEMPORARY---*/
-    -webkit-transition: background-color 300ms linear;
-    -ms-transition: background-color 300ms linear;
-    transition: background-color 300ms linear;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
     position: static;
 } 
 
