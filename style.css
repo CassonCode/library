@@ -17,9 +17,9 @@
 :root,
 :root.light {
    --background-color: #FFFDF3;
+   --secondary-background-color: #fff;   
    --opposite-background-color: #2b2b2b;
-   /* --secondary-background-color: #ECECEC;    */
-   --light-default-text-color: #6E6E6E;
+   --default-text-color: #6E6E6E;
    --gold-color: #CE973E;
    --blue-green-color: #6ABFC3;
    --gray-supp: #999999;
@@ -27,9 +27,9 @@
 
 :root.dark {
    --background-color: #2b2b2b;  /* 151515 */
-   --dark-secondary-background-color: #171717;   /* #242424 */
+   --secondary-background-color: #171717;   /* #242424 */
    --opposite-background-color: #FFFDF3;
-   --dark-default-text-color: #fff;
+   --default-text-color: #fff;
    --gray-supp: #bababa;
 }
 
@@ -44,13 +44,14 @@
     Mobile Header   =============================================
 ============================================================== */
 .main-content-container {
-    padding: 0px 20px 0 20px;
+    padding: 0px 20px;
     background-color: var(--background-color);
     display: grid;
     grid-template-rows: 20vh auto;
     -webkit-transition: background-color 300ms linear;
     -ms-transition: background-color 300ms linear;
     transition: background-color 300ms linear;
+    /* position: sticky; */
 }
 
 .header-container {
@@ -197,6 +198,10 @@
     Books Section   =============================================
 ============================================================== */
 .books-section {
-    background-color: white;
+    background-color: var(--secondary-background-color);
     height: 80vh;       /*---TEMPORARY---*/
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+    position: static;
 } 
