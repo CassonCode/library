@@ -103,7 +103,7 @@
     color: var(--gold-color);
     font-size: 40px;
     margin-top: 10px;
-    margin-right: -10px;
+    margin-right: -5px;
     -webkit-transition: color 300ms linear;
     -ms-transition: color 300ms linear;
     transition: color 300ms linear;
@@ -118,7 +118,7 @@
     background-color: transparent;
     width: 55px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 5px;
     /* border: 1px solid red; */
  }
 
