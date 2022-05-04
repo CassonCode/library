@@ -12,6 +12,7 @@
 
 :root {
     font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
 }
 
 :root,
@@ -97,6 +98,7 @@
     font-family: 'Norse-Bold';
     color: var(--gold-color);
     font-size: 40px;
+    margin-top: 5px;
     /* display: inline-block; */
     /* text-align: center; */
 }
@@ -105,7 +107,7 @@
     border-radius: 50%;
     border: none;
     background-color: transparent;
-    width: 60px;
+    width: 55px;
     height: auto;
     /* border: 1px solid red; */
  }
@@ -125,7 +127,7 @@
 
  .dark .theme-button.light {
     display: block;
-    width: 60px;
+    width: 55px;
  }
 
  
