@@ -47,7 +47,7 @@
     padding: 0px 20px;
     background-color: var(--background-color);
     display: grid;
-    grid-template-rows: 20vh auto;
+    grid-template-rows: min(20vh) auto;
     -webkit-transition: background-color 300ms linear;
     -ms-transition: background-color 300ms linear;
     transition: background-color 300ms linear;
@@ -137,15 +137,21 @@
  
  .mobile.filter-sort-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     grid-row: 2 / 3;
     border-bottom: 2px solid var(--gray-supp);
+    gap: 10px;
+ }
+
+ .sort-buttons-container {
+     display: flex;
+     gap: 5px;
  }
 
  .mobile.filter-select,
  .mobile.sort-select,
- .sort-high-low {
+ .sort-normal-reverse-button {
     background-color: var(--blue-green-color); 
     border-radius: 4px;
     border: none;
@@ -159,6 +165,26 @@
     padding: 15px 10px;
     font-size: 16px;
  }
+
+ .sort-normal-reverse-button {
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+ }
+ .sort-normal-reverse-icon {
+    fill: var(--default-text-color);
+    height: 100%;
+    width: 100%;
+ }
+ .sort-normal {
+    transform: rotate(0deg);
+    transition-duration: 0.3s;
+ }
+.sort-reverse {
+    transform: rotate(-180deg);
+    transition-duration: 0.3s;
+}
+
 
 
 
