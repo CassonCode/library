@@ -23,6 +23,7 @@
    --gold-color: #CE973E;
    --blue-green-color: #6ABFC3;
    --gray-supp: #999999;
+   --button-text-color: #424242;
 }
 
 :root.dark {
@@ -31,6 +32,7 @@
    --opposite-background-color: #FFFDF3;
    --default-text-color: #fff;
    --gray-supp: #bababa;
+   --button-text-color: #171717;
 }
 
 
@@ -165,7 +167,6 @@ padding: 10px 0;
 background-color: var(--blue-green-color); 
 border-radius: 4px;
 border: none;
-color: white;
 text-align: center;
 font-weight: bold;
 }
@@ -176,7 +177,12 @@ padding: 15px 10px;
 font-size: 16px;
 height: 50px;
 outline: none;
+color: var(--button-text-color);
+-webkit-transition: color 200ms linear;
+-ms-transition: color 200ms linear;
+transition: color 200ms linear;
 }
+
 #mobile-filter-select:focus,
 #mobile-sort-select:focus,
 #mobile-filter-select:active,
