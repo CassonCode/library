@@ -103,8 +103,12 @@
     color: var(--gold-color);
     font-size: 40px;
     margin-top: 10px;
-    /* display: inline-block; */
-    /* text-align: center; */
+    -webkit-transition: color 300ms linear;
+    -ms-transition: color 300ms linear;
+    transition: color 300ms linear;
+}
+.dark .mobile.title {
+    color: var(--default-text-color);
 }
 
 .theme-button {
@@ -115,71 +119,75 @@
     height: auto;
     /* border: 1px solid red; */
  }
- .dark-mode-icon {
+
+.dark-mode-icon {
+    fill: white;
+    width: 100%;
+}
+.light-mode-icon {
     fill: var(--gold-color);
-    width: 100%;
-    /* border: 1px solid red; */
-
-    /* margin-top: 5px; */
- }
- .theme-button.light {
-    display: none;
- }
- .dark .theme-button.dark {
-    display: none;
- }
-
- .dark .theme-button.light {
-    display: block;
-    width: 55px;
- }
-
- 
- .mobile.filter-sort-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    grid-row: 2 / 3;
-    border-bottom: 2px solid var(--gray-supp);
-    gap: 10px;
- }
-
- .sort-buttons-container {
-     display: flex;
-     gap: 5px;
- }
-
- .mobile.filter-select,
- .mobile.sort-select,
- .sort-normal-reverse-button {
-    background-color: var(--blue-green-color); 
-    border-radius: 4px;
-    border: none;
-    color: white;
-    text-align: center;
-    font-weight: bold;
- }
-
- #mobile-filter-select,
- #mobile-sort-select {
-    padding: 15px 10px;
-    font-size: 16px;
- }
-
- .sort-normal-reverse-button {
-    background-color: transparent;
-    height: 50px;
-    width: 50px;
- }
- .sort-normal-reverse-icon {
+}
+/* .dark .dark-mode-icon {
     fill: var(--default-text-color);
-    height: 100%;
-    width: 100%;
- }
- .sort-normal {
-    transform: rotate(0deg);
-    transition-duration: 0.3s;
- }
+} */
+.theme-button.light {
+display: none;
+}
+.dark .theme-button.dark {
+display: none;
+}
+
+.dark .theme-button.light {
+display: block;
+width: 55px;
+}
+
+
+.mobile.filter-sort-container {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+grid-row: 2 / 3;
+border-bottom: 2px solid var(--gray-supp);
+gap: 10px;
+}
+
+.sort-buttons-container {
+    display: flex;
+    gap: 5px;
+}
+
+.mobile.filter-select,
+.mobile.sort-select,
+.sort-normal-reverse-button {
+background-color: var(--blue-green-color); 
+border-radius: 4px;
+border: none;
+color: white;
+text-align: center;
+font-weight: bold;
+}
+
+#mobile-filter-select,
+#mobile-sort-select {
+padding: 15px 10px;
+font-size: 16px;
+}
+
+.sort-normal-reverse-button {
+background-color: transparent;
+height: 50px;
+width: 50px;
+}
+.sort-normal-reverse-icon {
+fill: var(--default-text-color);
+height: 100%;
+width: 100%;
+}
+.sort-normal {
+transform: rotate(0deg);
+transition-duration: 0.3s;
+}
 .sort-reverse {
     transform: rotate(-180deg);
     transition-duration: 0.3s;
