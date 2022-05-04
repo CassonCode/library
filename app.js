@@ -52,7 +52,7 @@ executeRating(ratingStars, ratingResult);
 
 
 
-///////////
+//  Adds/Removes css classes that open/close menu
 const menuButton = document.querySelector(".menu-button");
 const mobileSidebar = document.querySelector(".sidebar-menu-container");
 
@@ -74,4 +74,29 @@ function closeMenu() {
     menuButton.classList.remove("close-menu");
     mobileSidebar.classList.add("hide-menu");
     mobileSidebar.classList.remove("show-menu");
+}
+
+
+
+
+//  Rotating sort normal/reverse icon on click
+const sortNormalReverseButton = document.querySelector(".sort-normal-reverse-button");
+const sortNormalReverseIcon = document.querySelector(".sort-normal-reverse-icon");
+
+sortNormalReverseButton.addEventListener("click", () => {
+    (sortNormalReverseIcon.classList.contains("sort-normal")) ? setSortingIconToReverseOrder() : setSortingIconToNormalOrder();
+});
+
+function setSortingIconToNormalOrder() {
+    if (sortNormalReverseIcon.classList.contains("sort-reverse")) {
+        sortNormalReverseIcon.classList.remove("sort-reverse");
+    }
+    sortNormalReverseIcon.classList.add("sort-normal");
+}
+
+function setSortingIconToReverseOrder() {
+    if (sortNormalReverseIcon.classList.contains("sort-normal")) {
+        sortNormalReverseIcon.classList.remove("sort-normal");
+    }
+    sortNormalReverseIcon.classList.add("sort-reverse");
 }
