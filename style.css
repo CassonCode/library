@@ -24,6 +24,7 @@
    --blue-green-color: #6ABFC3;
    --gray-supp: #999999;
    --button-text-color: #424242;
+   --add-book-text-color: #005256;
 }
 
 :root.dark {
@@ -33,6 +34,7 @@
    --default-text-color: #fff;
    --gray-supp: #bababa;
    --button-text-color: #171717;
+   --add-book-text-color: #CFF4F5;
 }
 
 
@@ -244,6 +246,7 @@ transition-duration: 0.3s;
     font-size: 36px;
     padding-top: 50px;
     font-weight: bold;
+    color: var(--add-book-text-color);
 }
 
  .form-container {
