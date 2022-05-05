@@ -117,8 +117,6 @@ a {
 body {
     font-family: 'Lato';
     min-height: 100vh;
-    /* display: grid;
-    grid-template-rows: auto 1fr; */
 }
 
 
@@ -134,11 +132,12 @@ body {
     -ms-transition: background-color 200ms linear;
     transition: background-color 200ms linear;
     min-height: 100vh;
+    max-height: 100vh;
     /* position: sticky; */
+    overflow: hidden;
 }
 
 .header-container {
-    /* height: 20vh; */
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
@@ -146,9 +145,7 @@ body {
 .mobile.navbar {
     display: flex;
     justify-content: space-between;
-    /* height: auto; */
     align-items: center;
-    /* border-bottom: 1px solid #bababa52; */
     grid-row: 1 / 2;
     padding: 10px 0;
 }
@@ -157,11 +154,9 @@ body {
     background-color: transparent;
     color: var(--blue-green-color);
     border: none;
-    /* outline: 1px solid red; */
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    /* font-size: 30px; */
     text-align: center;
     /* visibility: hidden; */
     z-index: 100;
@@ -393,11 +388,12 @@ footer {
 ==================================================================================================== */
 .books-section {
     background-color: var(--secondary-background-color);
-    height: 80vh;
+    height: 100vh;
     -webkit-transition: background-color 200ms linear;
     -ms-transition: background-color 200ms linear;
     transition: background-color 200ms linear;
     position: static;
+    overflow-y: scroll;
 } 
 
 
