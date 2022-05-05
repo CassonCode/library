@@ -19,6 +19,7 @@
    --background-color: #FFFDF3;
    --secondary-background-color: #fff;   
    --opposite-background-color: #2b2b2b;
+   --opposite-secondary-background-color: #171717; 
    --default-text-color: #6E6E6E;
    --gold-color: #CE973E;
    --blue-green-color: #6ABFC3;
@@ -31,6 +32,7 @@
    --background-color: #2b2b2b;  /* 151515 */
    --secondary-background-color: #171717;   /* #242424 */
    --opposite-background-color: #FFFDF3;
+   --opposite-secondary-background-color: #fff; 
    --default-text-color: #fff;
    --gray-supp: #bababa;
    --button-text-color: #171717;
@@ -69,7 +71,7 @@
     justify-content: space-between;
     /* height: auto; */
     align-items: center;
-    border-bottom: 1px solid #bababa52;
+    /* border-bottom: 1px solid #bababa52; */
     grid-row: 1 / 2;
     padding: 10px 0;
 }
@@ -167,7 +169,7 @@ padding: 10px 0;
 .mobile.sort-select,
 .sort-normal-reverse-button {
 background-color: var(--blue-green-color); 
-border-radius: 4px;
+border-radius: 6px;
 border: none;
 text-align: center;
 font-weight: bold;
@@ -175,7 +177,7 @@ font-weight: bold;
 
 #mobile-filter-select,
 #mobile-sort-select {
-padding: 15px 10px;
+padding: 10px 10px;
 font-size: 16px;
 height: 50px;
 outline: none;
@@ -246,13 +248,32 @@ transition-duration: 0.3s;
     font-size: 36px;
     padding-top: 50px;
     font-weight: bold;
-    color: var(--add-book-text-color);
+    color: var(--blue-green-color);
 }
 
  .form-container {
      display: grid;
      align-items: center;
  }
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    color: var(--default-text-color);
+    font-weight: bold;
+}
+
+.github-profile-link {
+    color: var(--opposite-secondary-background-color);
+    text-decoration: none;
+}
+
+.github-project-link {
+    fill: var(--opposite-secondary-background-color);
+}
 
 
 
