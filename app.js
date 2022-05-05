@@ -13,30 +13,30 @@ const setTheme = theme => document.documentElement.className = theme;
 
 // printRatingResult(ratingResult);     ///////
 
-// function executeRating(stars, result) {
-//    const starClassActive = "rating__star fas fa-star";
-//    const starClassUnactive = "rating__star far fa-star";
-//    const starsLength = stars.length;
-//    let i;
-//    stars.map((star) => {
-//       star.onclick = () => {
-//          i = stars.indexOf(star);
+function executeRating(stars, result) {
+   const starClassActive = "rating__star fas fa-star";
+   const starClassUnactive = "rating__star far fa-star";
+   const starsLength = stars.length;
+   let i;
+   stars.map((star) => {
+      star.onclick = () => {
+         i = stars.indexOf(star);
 
-//          if (star.className.indexOf(starClassUnactive) !== -1) {
-//              //printRatingResult(result, i + 1);        ////////
-//             for (i; i >= 0; --i) stars[i].className = starClassActive;
-//          } 
-//          else {
-//              //printRatingResult(result, i);        //////
-//             for (i; i < starsLength; ++i) stars[i+1].className = starClassUnactive;
-//          }
-//       };
-//    });
-// }
-// function printRatingResult(result, num = 0) {
-//    result.textContent = `${num}/5`;
-// }
-// executeRating(ratingStars, ratingResult);
+         if (star.className.indexOf(starClassUnactive) !== -1) {
+             //printRatingResult(result, i + 1);        ////////
+            for (i; i >= 0; --i) stars[i].className = starClassActive;
+         } 
+         else {
+             //printRatingResult(result, i);        //////
+            for (i; i < starsLength; ++i) stars[i+1].className = starClassUnactive;
+         }
+      };
+   });
+}
+function printRatingResult(result, num = 0) {
+   result.textContent = `${num}/5`;
+}
+//executeRating(ratingStars, ratingResult);
 
 // Uncaught TypeError: stars[(i + 1)] is undefined
 // onclick http://127.0.0.1:5500/app.js:26
@@ -45,7 +45,47 @@ const setTheme = theme => document.documentElement.className = theme;
 // <anonymous> http://127.0.0.1:5500/app.js:36
 
 
+//  Change rating on book being added or edited
+const starsArray = [...document.getElementsByClassName("add-book-star-button")]; 
+//console.log(starsArray);    //  array of star buttons (not icons)
 
+const starButtons = document.querySelectorAll(".add-book-star-button");
+
+
+function setStarRating(arr) {
+    
+
+    arr.forEach((starButton) => {       /////// use 'forEach'  or  '.map' ?????
+        starButton.onclick = () => {
+            for (let i = 0; i <= arr.indexOf(starButton); i++) {
+                console.log(starButton);
+                let currentStarButton = arr[i];
+                let currentStar = currentStarButton.firstElementChild;
+                console.log(currentStar);
+                addStarActiveClass(currentStar);
+            }
+            for (let i = arr.length - 1; i > arr.indexOf(starButton); i--) {
+                let currentStarButton = arr[i];
+                let currentStar = currentStarButton.firstElementChild;
+                removeStarActiveClass(currentStar);
+            }
+        }
+    });
+
+}
+setStarRating(starsArray);
+
+function addStarActiveClass(currentStar) {
+    currentStar.classList.remove("add-star-inactive");
+    currentStar.classList.add("add-star-active");
+}
+function removeStarActiveClass(currentStar) {
+    currentStar.classList.remove("add-star-active");
+    currentStar.classList.add("add-star-inactive");
+}
+
+//  add function to find current star rating
+        //  (look up number of elements(stars) in star array that have active class)
 
 
 
