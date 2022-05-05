@@ -115,7 +115,7 @@ body {
 .mobile.title {
     font-family: 'Norse-Bold';
     color: var(--gold-color);
-    font-size: 40px;
+    font-size: 60px;    /* 45px */
     margin-top: 10px;
     -webkit-transition: color 200ms linear;
     -ms-transition: color 200ms linear;
@@ -195,6 +195,7 @@ color: var(--secondary-background-color);
 -webkit-transition: color 200ms linear;
 -ms-transition: color 200ms linear;
 transition: color 200ms linear;
+box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 #mobile-filter-select:focus,
@@ -212,6 +213,7 @@ width: 50px;
 -webkit-transition: background-color 200ms linear;
 -ms-transition: background-color 200ms linear;
 transition: background-color 200ms linear;
+box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .sort-normal-reverse-icon {
 fill: var(--default-text-color);
@@ -261,8 +263,8 @@ option {
 
 .mobile.add-or-edit-book-title {
     text-align: center;
-    font-size: 36px;
-    padding-top: 50px;
+    font-size: 50px;
+    padding-top: 75px;
     font-weight: 900;
     color: var(--blue-green-color);
 }
@@ -343,10 +345,18 @@ footer {
 /* ====================================================================================================
     Media Queries   ===================================================================================
 ==================================================================================================== */
+@media (max-width: 600px) {
+    .mobile.title {
+        font-size: 10vw;
+    }
+}
+
+
+
 @media (max-width: 500px) {
     .mobile.add-or-edit-book-title {
-        font-size: 7vw;
-        padding-top: 5vh;
+        font-size: 10vw;
+        padding-top: 10vh;
     }
 }
 
@@ -365,3 +375,4 @@ footer {
         padding: 0px 10px;
     }
 }
+
