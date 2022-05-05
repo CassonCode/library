@@ -57,7 +57,7 @@ body {
     Mobile Header   ===================================================================================
 ==================================================================================================== */
 .main-content-container {
-    padding: 0px 20px;
+    padding: 0px 25px;
     background-color: var(--background-color);
     display: grid;
     grid-template-rows: min-content min-content;     /*  min(20vh) auto  */
@@ -268,6 +268,7 @@ option {
  .form-container {
      display: grid;
      align-items: center;
+     padding: 0 25px;
  }
 
  .book-info-form {
