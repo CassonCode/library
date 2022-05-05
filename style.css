@@ -239,7 +239,7 @@ option {
     background-color: var(--background-color);
     width: 100vw;
     min-height: 100%;
-    position: fixed;
+    position: absolute;    /* fixed */
     overflow-y: scroll;
     top: 0;
     left: 0;
