@@ -6,12 +6,12 @@
     font-family: "Norse-Bold";
     src: url("Fonts/Norse-Bold.otf") format("OpenType");
  }
- @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+ /* @import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap'); */
 
 
 
-:root {
-    font-family: 'Roboto', sans-serif;
+html {
+    font-family: 'Lato', sans-serif;
 }
 
 :root,
@@ -43,6 +43,11 @@
 .desktop,
 .edit-book-button {
     display: none;
+}
+
+
+body {
+    font-family: 'Lato';
 }
 
 
@@ -109,7 +114,7 @@
     font-family: 'Norse-Bold';
     color: var(--gold-color);
     font-size: 40px;
-    /* margin-top: 10px; */
+    margin-top: 10px;
     -webkit-transition: color 200ms linear;
     -ms-transition: color 200ms linear;
     transition: color 200ms linear;
@@ -117,6 +122,8 @@
 .dark .mobile.title {
     color: var(--default-text-color);
 }
+
+
 
 .theme-button {
     border-radius: 50%;
@@ -195,7 +202,6 @@ transition: color 200ms linear;
 }
 
 
-
 .sort-normal-reverse-button {
 background-color: transparent;
 height: 50px;
@@ -215,7 +221,10 @@ transition-duration: 0.3s;
     transition-duration: 0.3s;
 }
 
-
+select,
+option {
+    font-family: 'Lato';
+}
 
 
 /* ====================================================================================================
@@ -261,7 +270,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 20px;
+    padding-bottom: 20px;
     color: var(--default-text-color);
     font-weight: bold;
 }
@@ -294,6 +303,17 @@ footer {
 
 
 
+
+
+
+
+
+
+/* #mobile-filter-select,
+#mobile-sort-select,
+option,
+.mobile.add-or-edit-book-title,
+ */
 
 
 
