@@ -181,13 +181,13 @@ background-color: var(--blue-green-color);
 border-radius: 6px;
 border: none;
 text-align: center;
-font-weight: bold;
 }
 
 #mobile-filter-select,
 #mobile-sort-select {
 padding: 10px 10px;
 font-size: 16px;
+font-weight: 700;
 height: 50px;
 outline: none;
 color: var(--button-text-color);
@@ -261,7 +261,7 @@ option {
     text-align: center;
     font-size: 36px;
     padding-top: 50px;
-    font-weight: bold;
+    font-weight: 900;
     color: var(--blue-green-color);
 }
 
@@ -277,7 +277,7 @@ footer {
     gap: 10px;
     padding-bottom: 10px;
     color: var(--default-text-color);
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .github-profile-link {
