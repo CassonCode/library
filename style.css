@@ -26,6 +26,7 @@ html {
    --gray-supp: #999999;
    --button-text-color: #424242;
    --add-book-text-color: #005256;
+   --sort-arrow-color: #e7e7e7;
 }
 
 :root.dark {
@@ -33,10 +34,11 @@ html {
    --secondary-background-color: #171717;   /* #242424 */
    --opposite-background-color: #FFFDF3;
    --opposite-secondary-background-color: #fff; 
-   --default-text-color: #fff;
+   --default-text-color: #FFFDF3;
    --gray-supp: #bababa;
    --button-text-color: #171717;
    --add-book-text-color: #CFF4F5;
+   --sort-arrow-color: #444444;
 }
 
 
@@ -203,9 +205,12 @@ transition: color 200ms linear;
 
 
 .sort-normal-reverse-button {
-background-color: transparent;
+background-color: var(--sort-arrow-color);
 height: 50px;
 width: 50px;
+-webkit-transition: background-color 200ms linear;
+-ms-transition: background-color 200ms linear;
+transition: background-color 200ms linear;
 }
 .sort-normal-reverse-icon {
 fill: var(--default-text-color);
@@ -270,7 +275,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     color: var(--default-text-color);
     font-weight: bold;
 }
@@ -307,13 +312,6 @@ footer {
 
 
 
-
-
-/* #mobile-filter-select,
-#mobile-sort-select,
-option,
-.mobile.add-or-edit-book-title,
- */
 
 
 
