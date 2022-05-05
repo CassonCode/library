@@ -133,6 +133,7 @@ body {
     background-color: transparent;
     width: 55px;
     height: auto;
+    z-index: 10;
     /* border: 1px solid red; */
  }
 
