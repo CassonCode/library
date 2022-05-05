@@ -170,7 +170,7 @@ body {
     transform-origin: center;
     /* transition: transform; */
     transition-duration: 0.3s;
-    color: var(--opposite-background-color);
+    color: var(--default-text-color);
 }
 
 .mobile.title {
@@ -303,8 +303,9 @@ option {
     background-color: var(--background-color);
     width: 100vw;
     min-height: 100vh;
+    max-height: 100vh;
     position: absolute;    /* fixed */
-    overflow-y: scroll;
+    /* overflow-y: hidden; */
     top: 0;
     left: 0;
     z-index: 2;
@@ -338,6 +339,7 @@ option {
      display: grid;
      align-items: start;
      padding: 75px 25px 0 25px;
+     overflow-y: scroll;
  }
 
  .book-info-form {
@@ -359,6 +361,11 @@ option {
     transition: color 200ms linear;
  }
 
+ input {
+     height: 40px;
+     background-color: #6abfc338;
+ }
+
  .add-book-star-rating-container {
     flex-direction: row;
  }
@@ -373,7 +380,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding-bottom: 10px;
+    padding: 5px 0;
     color: var(--default-text-color);
     font-weight: 700;
 }
