@@ -473,16 +473,9 @@ footer {
     .mobile.add-or-edit-book-title {
         font-size: 10vw;
         padding-top: 10vh;
-    }
-    
-    /* .form-container {
-        padding-left: 25px;
-        padding-right: 25px;
-    } */
-   
+    }   
     .form-container {
         max-width: 100vw;
-        /* padding-left: 25px; */
     }
 }
 
@@ -493,7 +486,6 @@ footer {
     .mobile.filter-sort-container {
         flex-direction: column;
     }
-
     #mobile-filter-select,
     #mobile-sort-select,
     .sort-normal-reverse-button {
