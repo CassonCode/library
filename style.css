@@ -270,6 +270,27 @@ option {
      align-items: center;
  }
 
+ .book-info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+ }
+
+ .book-info-form > * {
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+ }
+
+ .add-book-star-rating-container {
+    flex-direction: row;
+ }
+
+ .add-edit-book-heading {
+    font-size: 22px;
+    font-weight: 700;
+ }
+
 footer {
     display: flex;
     justify-content: center;

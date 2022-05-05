@@ -250,19 +250,19 @@
         <div class="form-container">
             <form action="" class="book-info-form">
                 <div class="title-input-container">
-                    <label for="title-input">Title</label>
+                    <label class="add-edit-book-heading" for="title-input">Title</label>
                     <input type="text" name="title-input" id="title-input" maxlength="50" required>
                 </div>
                 <div class="author-first-name-input-container">
-                    <label for="author-first-name-input">Author First Name</label>
+                    <label class="add-edit-book-heading" for="author-first-name-input">Author First Name</label>
                     <input type="text" name="author-first-name-input" id="author-first-name-input" maxlength="50" required>
                 </div>
                 <div class="author-last-name-input-container">
-                    <label for="author-last-name-input">Author Last Name</label>
+                    <label class="add-edit-book-heading" for="author-last-name-input">Author Last Name</label>
                     <input type="text" name="author-last-name-input" id="author-last-name-input" maxlength="50" required>
                 </div>
                 <div class="status-dropdown-container">
-                    <label for="status-dropdown">Status</label>
+                    <label class="add-edit-book-heading" for="status-dropdown">Status</label>
                     <select name="status-dropdown" id="status-dropdown" required>
                         <option value="finished" selected>Finished</option>
                         <option value="currently-reading">Currently Reading</option>
@@ -271,15 +271,18 @@
                     </select>
                 </div>
                 <div class="add-book-rating-container">
-                    <span class="rating__result"></span>
-                    <i class="rating__star far fa-star"></i>
-                    <i class="rating__star far fa-star"></i>
-                    <i class="rating__star far fa-star"></i>
-                    <i class="rating__star far fa-star"></i>
-                    <i class="rating__star far fa-star"></i>
+                    <p class="add-edit-book-heading add-book-star-rating-text">Rating</p>
+                    <div class="add-book-star-rating-container">
+                        <span class="rating__result"></span>
+                        <i class="rating__star far fa-star"></i>
+                        <i class="rating__star far fa-star"></i>
+                        <i class="rating__star far fa-star"></i>
+                        <i class="rating__star far fa-star"></i>
+                        <i class="rating__star far fa-star"></i>
+                    </div>
               </div>
                 <div class="page-count-container">
-                    <label for="page-count">Page Count</label>
+                    <label class="add-edit-book-heading" for="page-count">Page Count</label>
                     <input type="number" name="page-count" id="page-count" min="1" max="15,000">
                 </div>
                 <div class="add-edit-button-container">
