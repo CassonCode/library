@@ -416,12 +416,34 @@ option {
     background-color: transparent;
 }
 
-.add-star {
+.add-star,
+.add-star.star-visible {
     width: 100%;
     height: 100%;
+    fill: var(--inactive-star-color);
+    -webkit-transition: fill 200ms linear;
+    -ms-transition: fill 200ms linear;
+    transition: fill 200ms linear; 
+}
+.add-star-active,
+.add-star-active.star-visible {
+    width: 100%;
+    height: 100%;
+    fill: var(--blue-green-color);
+    -webkit-transition: fill 200ms linear;
+    -ms-transition: fill 200ms linear;
+    transition: fill 200ms linear; 
 }
 
-.add-star-active {
+.star-visible {
+    display: block;
+}
+.star-hidden {
+    display: none;
+}
+
+
+/* .add-star-active {
     fill: var(--blue-green-color);
     -webkit-transition: fill 200ms linear;
     -ms-transition: fill 200ms linear;
@@ -433,7 +455,7 @@ option {
     -webkit-transition: fill 200ms linear;
     -ms-transition: fill 200ms linear;
     transition: fill 200ms linear; 
-}
+} */
 
 
 

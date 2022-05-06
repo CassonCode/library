@@ -634,8 +634,8 @@
                 </div>
                 <div class="status-dropdown-container">
                     <label class="form-text add-edit-book-heading" for="status-dropdown">Status</label>
-                    <select name="status-dropdown" id="status-dropdown" required>
-                        <option value="finished" selected>Finished</option>
+                    <select name="status-dropdown" class="status-dropdown" id="status-dropdown">
+                        <option value="finished">Finished</option>
                         <option value="currently-reading">Currently Reading</option>
                         <option value="abandoned">Abandoned</option>
                         <option value="not-started">Not Started</option>
@@ -650,26 +650,44 @@
                         <i class="rating__star far fa-star"></i>
                         <i class="rating__star far fa-star"></i>
                         <i class="rating__star far fa-star"></i> -->
-                        <button class="add-book-star-button add-star-inactive" type="button">
-                            <svg class="add-star" viewBox="0 0 24 24">
+                        <button class="add-book-star-button" type="button">
+                            <svg class="add-star star-visible" viewBox="0 0 24 24">
                                 <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" />
                             </svg>
+                            <svg class="add-star-active star-hidden" viewBox="0 0 24 24">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
+                            </svg>
                         </button>
-                        <button class="add-book-star-button add-star-inactive" type="button">
-                            <svg class="add-star" viewBox="0 0 24 24">
-                            <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" />
-                            </svg></button>
-                        <button class="add-book-star-button add-star-inactive" type="button">
-                            <svg class="add-star" viewBox="0 0 24 24">
-                            <path  d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" />
-                            </svg></button>
-                        <button class="add-book-star-button add-star-inactive" type="button">
-                            <svg class="add-star" viewBox="0 0 24 24">
-                            <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" />
-                            </svg></button>
-                        <button class="add-book-star-button add-star-inactive" type="button">
-                            <svg class="add-star" viewBox="0 0 24 24">
-                            <path  d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" />
+                        <button class="add-book-star-button" type="button">
+                            <svg class="add-star star-visible" viewBox="0 0 24 24">
+                                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" />
+                            </svg>
+                            <svg class="add-star-active star-hidden" viewBox="0 0 24 24">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
+                            </svg>
+                        </button>
+                        <button class="add-book-star-button" type="button">
+                            <svg class="add-star star-visible" viewBox="0 0 24 24">
+                                <path  d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" />
+                            </svg>
+                            <svg class="add-star-active star-hidden" viewBox="0 0 24 24">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
+                            </svg>
+                        </button>
+                        <button class="add-book-star-button" type="button">
+                            <svg class="add-star star-visible" viewBox="0 0 24 24">
+                                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" />
+                            </svg>
+                            <svg class="add-star-active star-hidden" viewBox="0 0 24 24">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
+                            </svg>
+                        </button>
+                        <button class="add-book-star-button" type="button">
+                            <svg class="add-star star-visible" viewBox="0 0 24 24">
+                                <path  d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" />
+                            </svg>
+                            <svg class="add-star-active star-hidden" viewBox="0 0 24 24">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
                             </svg>
                         </button>
                     </div>

@@ -13,29 +13,29 @@ const setTheme = theme => document.documentElement.className = theme;
 
 // printRatingResult(ratingResult);     ///////
 
-function executeRating(stars, result) {
-   const starClassActive = "rating__star fas fa-star";
-   const starClassUnactive = "rating__star far fa-star";
-   const starsLength = stars.length;
-   let i;
-   stars.map((star) => {
-      star.onclick = () => {
-         i = stars.indexOf(star);
+// function executeRating(stars, result) {
+//    const starClassActive = "rating__star fas fa-star";
+//    const starClassUnactive = "rating__star far fa-star";
+//    const starsLength = stars.length;
+//    let i;
+//    stars.map((star) => {
+//       star.onclick = () => {
+//          i = stars.indexOf(star);
 
-         if (star.className.indexOf(starClassUnactive) !== -1) {
-             //printRatingResult(result, i + 1);        ////////
-            for (i; i >= 0; --i) stars[i].className = starClassActive;
-         } 
-         else {
-             //printRatingResult(result, i);        //////
-            for (i; i < starsLength; ++i) stars[i+1].className = starClassUnactive;
-         }
-      };
-   });
-}
-function printRatingResult(result, num = 0) {
-   result.textContent = `${num}/5`;
-}
+//          if (star.className.indexOf(starClassUnactive) !== -1) {
+//              //printRatingResult(result, i + 1);        ////////
+//             for (i; i >= 0; --i) stars[i].className = starClassActive;
+//          } 
+//          else {
+//              //printRatingResult(result, i);        //////
+//             for (i; i < starsLength; ++i) stars[i+1].className = starClassUnactive;
+//          }
+//       };
+//    });
+// }
+// function printRatingResult(result, num = 0) {
+//    result.textContent = `${num}/5`;
+// }
 //executeRating(ratingStars, ratingResult);
 
 // Uncaught TypeError: stars[(i + 1)] is undefined
@@ -47,45 +47,50 @@ function printRatingResult(result, num = 0) {
 
 //  Change rating on book being added or edited
 const starsArray = [...document.getElementsByClassName("add-book-star-button")]; 
-//console.log(starsArray);    //  array of star buttons (not icons)
+const starButtons = document.querySelector(".add-book-star-button");
+const starIconFilled = document.querySelector(".add-star-active");
+const starIconOutline = document.querySelector(".add-star-inactive");
 
-const starButtons = document.querySelectorAll(".add-book-star-button");
-
+let newBookRating;
 
 function setStarRating(arr) {
-    
-
-    arr.forEach((starButton) => {       /////// use 'forEach'  or  '.map' ?????
-        starButton.onclick = () => {
-            for (let i = 0; i <= arr.indexOf(starButton); i++) {
-                console.log(starButton);
-                let currentStarButton = arr[i];
-                let currentStar = currentStarButton.firstElementChild;
-                console.log(currentStar);
-                addStarActiveClass(currentStar);
+        arr.forEach((starButton) => {       /////// use 'forEach'  or  '.map' ?????
+            starButton.onclick = () => {
+                for (let i = 0; i <= arr.indexOf(starButton); i++) {
+                    // console.log(starButton);
+                    let currentStarButton = arr[i];
+                    let activeStar = currentStarButton.children[1];
+                    let inactiveStar = currentStarButton.children[0];
+                    // console.log(currentStar);
+                    addStarVisibleClass(activeStar);
+                    addStarHiddenClass(inactiveStar);
+                    newBookRating = i + 1;
+                }
+                for (let i = arr.length - 1; i > arr.indexOf(starButton); i--) {
+                    let currentStarButton = arr[i];
+                    let activeStar = currentStarButton.children[0];
+                    let inactiveStar = currentStarButton.children[1];
+                    // console.log(currentStar);
+                    addStarVisibleClass(activeStar);
+                    addStarHiddenClass(inactiveStar);
+                }
+                console.log(`${newBookRating} out of 5 stars.`);
             }
-            for (let i = arr.length - 1; i > arr.indexOf(starButton); i--) {
-                let currentStarButton = arr[i];
-                let currentStar = currentStarButton.firstElementChild;
-                removeStarActiveClass(currentStar);
-            }
-        }
-    });
-
+        });
 }
-setStarRating(starsArray);
+// setStarRating(starsArray, currentStatusText);
 
-function addStarActiveClass(currentStar) {
-    currentStar.classList.remove("add-star-inactive");
-    currentStar.classList.add("add-star-active");
+function addStarVisibleClass(star) {
+    star.classList.remove("star-hidden");
+    star.classList.add("star-visible");
 }
-function removeStarActiveClass(currentStar) {
-    currentStar.classList.remove("add-star-active");
-    currentStar.classList.add("add-star-inactive");
+function addStarHiddenClass(star) {
+    star.classList.remove("star-visible");
+    star.classList.add("star-hidden");
 }
 
-//  add function to find current star rating
-        //  (look up number of elements(stars) in star array that have active class)
+starButtons.addEventListener("click", setStarRating(starsArray));
+
 
 
 
