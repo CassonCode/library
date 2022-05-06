@@ -166,6 +166,8 @@ body {
     height: 100%;
     transform: rotate(45deg);
     transition: transform;
+    -webkit-transition: transform;
+    -ms-transition: transform;
 }
 .open-menu {
     transition-duration: 0.15s;
