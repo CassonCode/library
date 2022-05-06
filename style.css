@@ -557,7 +557,8 @@ footer {
     #status-dropdown {
         width: 85vw;
     }
-    .submit-button {
+    .submit-button,
+    .submit-button:focus {
         width: 85vw;
     }
 }
