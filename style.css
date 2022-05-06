@@ -409,6 +409,10 @@ option {
     transition: color 200ms linear; 
  }
 
+ #status-dropdown > * {
+     color: #fff;
+ }
+
  .add-book-star-rating-container {
     flex-direction: row;
  }
@@ -444,23 +448,6 @@ option {
 .star-hidden {
     display: none;
 }
-
-
-/* .add-star-active {
-    fill: var(--blue-green-color);
-    -webkit-transition: fill 200ms linear;
-    -ms-transition: fill 200ms linear;
-    transition: fill 200ms linear; 
-}
-
-.add-star-inactive {
-    fill: var(--inactive-star-color);
-    -webkit-transition: fill 200ms linear;
-    -ms-transition: fill 200ms linear;
-    transition: fill 200ms linear; 
-} */
-
-
 
 
 

@@ -1,3 +1,9 @@
+const qs = document.querySelector.bind(document); 
+const qsa = document.querySelectorAll.bind(document);
+// ex: qs('#myButton');
+
+
+
 // Sets class for :root, specifically for switching between light and dark mode
 const setTheme = theme => document.documentElement.className = theme;
 
@@ -92,7 +98,42 @@ function addStarHiddenClass(star) {
 starButtons.addEventListener("click", setStarRating(starsArray));
 
 
-// 'Cascadia Code'
+
+const statusDropdown = document.getElementById("status-dropdown");
+
+statusDropdown.addEventListener("change", disableStarButtons);
+
+function disableStarButtons(event) {
+    let currentOption = statusDropdown.value;
+    let newOption = event.target.value;
+    
+    if (newOption === "currently-reading" || newOption === "not-started" || currentOption === "currently-reading" || currentOption === "not-started") {
+        starsArray.forEach((button) => {
+            button.disabled = true;
+            setStarRatingToZero(starsArray);
+        });
+    }
+    else {
+        currentOption = statusDropdown.value;
+        starsArray.forEach((button) => {
+            button.disabled = false;
+        });
+    }
+}
+
+function setStarRatingToZero(arr) {
+    arr.forEach((star) => {
+        if (star.children[1].classList.contains("star-visible")) {
+            addStarHiddenClass(star.children[1]);
+            addStarVisibleClass(star.children[0]);
+        }
+    });
+    newBookRating = 0;
+}
+
+window.onload = () => statusDropdown.value.selected = "finished";
+
+
 
 
 
