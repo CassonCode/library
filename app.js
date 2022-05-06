@@ -92,7 +92,7 @@ function addStarHiddenClass(star) {
 starButtons.addEventListener("click", setStarRating(starsArray));
 
 
-
+// 'Cascadia Code'
 
 
 
