@@ -3,8 +3,11 @@ const qsa = document.querySelectorAll.bind(document);
 // ex:  qs('#myButton');
 
 
+
+
 // Sets class for :root, specifically for switching between light and dark mode
 const setTheme = theme => document.documentElement.className = theme;
+
 
 
 
