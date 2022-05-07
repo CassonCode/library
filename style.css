@@ -316,6 +316,7 @@ option {
     max-height: 100vh;
     position: absolute;    /* fixed */
     /* overflow-y: hidden; */
+    overflow-y: scroll;
     top: 0;
     left: 0;
     z-index: 2;
@@ -354,7 +355,11 @@ option {
      display: grid;
      align-items: start;
      /* padding: 75px 25px 0 25px; */
-     overflow-y: scroll;
+     /* overflow-y: scroll; */
+     background-color: var(--background-color);
+     -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
      margin-top: 60px;
      justify-content: center;
  }
