@@ -160,6 +160,7 @@ body {
     text-align: center;
     /* visibility: hidden; */
     z-index: 100;
+    position: sticky;
 }
 .menu-icon {
     width: 100%;
