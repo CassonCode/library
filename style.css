@@ -679,6 +679,7 @@ footer {
 
     .filter-container {
         display: flex;
+        align-items: center;
         gap: 50px;
     }
 
@@ -732,9 +733,26 @@ footer {
     }
 
 
+    .sort-container {
+        display: grid;
+        grid-template-columns: 4fr 4fr 2fr 2fr 2fr 3fr;
+        padding-top: 35px;
+        padding-bottom: 3px;
+        align-items: flex-end;
+    }
 
+    .sort-container > * > * {
+        background-color: transparent;
+        color: var(--default-text-color);
+        font-size: 16px;
+        font-weight: 700;
+        display: flex;
+    }
 
-
+    .sort-container > * > * > * {
+        width: 20px;
+        height: 20px;
+    }
 
 
 
@@ -770,7 +788,7 @@ footer {
         position: static;
         transform: none;
         overflow-y: hidden;
-        width: 300px;
+        width: 230px;
         padding-right: 0;
         padding-left: 20px;
     }
@@ -786,7 +804,7 @@ footer {
 
     .form-container {
         padding-right: 0;
-        width: 300px;
+        width: 230px;
         justify-content: left;
         align-items: center;
         margin-top: 0px;
@@ -885,10 +903,10 @@ footer {
 
 
 /* flex grow = 0 on books container when screen too big, flex grow = 1 on sidebar container */
-@media (min-width: 1700px) {
+@media (min-width: 1800px) {
     .main-content-container {
         flex: 0;
-        min-width: 1370px;
+        min-width: 1475px;  /*  1370px  */
         padding-right: 40px;
     }
 
