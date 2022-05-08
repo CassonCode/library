@@ -91,11 +91,12 @@ a {
    --sort-arrow-color: #e7e7e7;
    --add-book-incomplete-color: #6E6E6E;
    --inactive-star-color: rgb(212, 212, 212);
+   --books-container-outline-color: #999;
 }
 
 :root.dark {
-   --background-color: #2b2b2b;  /* 151515 */
-   --secondary-background-color: #171717;   /* #242424 */
+   --background-color: #1a1a1a;  /* 2b2b2b  151515 */
+   --secondary-background-color: #121212;   /* #242424 */
    --opposite-background-color: #FFFDF3;
    --opposite-secondary-background-color: #fff; 
    --default-text-color: #FFFDF3;
@@ -105,6 +106,7 @@ a {
    --sort-arrow-color: #444444;
    --add-book-incomplete-color: #bababa;
    --inactive-star-color: rgb(65, 65, 65);
+   --books-container-outline-color: #F9F0E1;
 }
 
 
@@ -207,7 +209,7 @@ body {
  }
 
 .dark-mode-icon {
-    fill: white;
+    fill: var(--gray-supp);
     width: 100%;
 }
 .light-mode-icon {
@@ -441,6 +443,7 @@ option {
 .add-star-hover:hover,
 .add-star-hover.star-visible-hover:hover {
     fill: var(--blue-green-color);
+    cursor: pointer;
 }
 
 .add-star-active,
@@ -455,10 +458,12 @@ option {
 .add-star-active-hover:hover,
 .add-star-active-hover.star-visible-hover:hover {
     fill: #85dce0;
+    cursor: pointer;
 }
 
 .star-visible {
     display: block;
+    cursor: pointer;
 }
 .star-hidden {
     display: none;
@@ -476,20 +481,24 @@ option {
     width: 510px;
     outline: none;
     /* background-color: var(--blue-green-color); */
-    background-color: var(--sort-arrow-color);
+    background-color: var(--blue-green-color);
     /* box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25); */
-    box-shadow: inset 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
     /* color: var(--secondary-background-color); */
-    color: var(--add-book-incomplete-color);
+    color: var(--secondary-background-color);
     height: 70px;
     margin-top: 40px;
     font-size: 24px;
     font-weight: 700;
     border-radius: 8px;
-    -webkit-transition: color 200ms linear, background-color 200ms linear;
-    -ms-transition: color 200ms linear, background-color 200ms linear;
-    transition: color 200ms linear, background-color 200ms linear; 
+    -webkit-transition: color 200ms linear, background-color 100ms linear;
+    -ms-transition: color 200ms linear, background-color 100ms linear;
+    transition: color 200ms linear, background-color 100ms linear; 
     padding: 0;
+ }
+ .submit-button:hover {
+     cursor: pointer;
+    background-color: #6abfc3c7;
  }
 
 footer {
@@ -617,7 +626,8 @@ footer {
 /* ====================================================================================================
     Desktop Media Queries   ===========================================================================
 ==================================================================================================== */
-@media (min-width: 1400px) and (min-height: 750px) {
+@media (min-width: 1400px) and (min-height: 750px) {   
+
 
     .mobile {
         display: none !important; 
@@ -627,6 +637,11 @@ footer {
     }
 
 
+    body {
+        display: flex;
+        flex-direction: row-reverse;
+    
+    }
 
 
     .main-content-container {
@@ -635,21 +650,48 @@ footer {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-    body {
+    .header-container {
         display: flex;
-        flex-direction: row-reverse;
-    
+        flex-direction: column;
     }
+
+    .theme-button-container {
+        display: flex;
+        justify-content: end;
+    }
+
+    .theme-button {
+        height: 45px;
+        width: 45px;
+        margin-top: 20px;
+    }
+
+    .theme-button:hover {
+        cursor: pointer;
+    }
+
+
+
+    .books-section::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; 
+    }
+    /* .books-section {
+        border: 1px dotted black;
+        overflow: scroll;
+    } */
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    /* .books-section::-webkit-scrollbar {
+        display: none;
+    } */
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .books-section {
+        -ms-overflow-style: none;   /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        border-top: 3px solid var(--books-container-outline-color);
+    }
+
+
 
 
     .sidebar-menu-container {
@@ -664,8 +706,9 @@ footer {
 
     .desktop.title {
         font-family: 'Norse-Bold';
-        font-size: 40px;
+        font-size: 50px;
         color: var(--gold-color);
+        margin-top: 40px;
     }
 
 
@@ -674,6 +717,7 @@ footer {
         width: 300px;
         justify-content: left;
         align-items: center;
+        margin-top: 0px;
     }
 
 
@@ -772,6 +816,11 @@ footer {
     }
 
 
+    /* .theme-button {
+        margin-top: 40px;
+    } */
+
+
     .sidebar-menu-container {
         width: auto;
         flex: 1;
@@ -781,31 +830,7 @@ footer {
 
     .form-container {
         width: 230px;
-    }
-
-
-
-
-
-
-    ::-webkit-scrollbar {
-        width: 0px;
-        background: transparent; /* make scrollbar transparent */
-    }
-    .books-section {
-        border: 1px dotted black;
-        overflow: scroll;
-    }
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .books-section::-webkit-scrollbar {
-        display: none;
-    }
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .books-section {
-        -ms-overflow-style: none;   /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
-    
+    }    
 }
 
 
