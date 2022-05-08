@@ -690,20 +690,46 @@ footer {
         -webkit-transition: color 200ms linear;
         -ms-transition: color 200ms linear;
         transition: color 200ms linear;
+        height: 30px;
     }
 
     .filter-container > *:hover {
-        /* border-bottom: solid 1px var(--default-text-color); */
+        border-bottom: solid 1px var(--default-text-color);
         cursor: pointer;
+        border-top: solid 1px var(--background-color);
     }
 
-    .filter-option-selected {
+    .filter-option-selected,
+    .filter-option-selected:hover {
         color: var(--blue-green-color);
         border-bottom: solid 3px var(--blue-green-color);
+        border-top: none;
     }
 
 
 
+    .total-books-text {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--default-text-color);
+        border-bottom: 2px solid var(--gray-supp);
+        padding: 0 4px 2px 45px;
+        /* padding-right: 4px; */
+        -webkit-transition: color 200ms linear, border-color 200ms linear;
+        -ms-transition: color 200ms linear, border-color 200ms linear;
+        transition: color 200ms linear, border-color 200ms linear;
+        
+    }
+
+    .total-books-number {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--gold-color);
+        display: flex;
+        justify-content: end;
+        padding-right: 4px;
+        padding-top: 2px;
+    }
 
 
 
