@@ -654,6 +654,7 @@ footer {
     .header-container {
         display: flex;
         flex-direction: column;
+        gap: 15px;
     }
 
     .theme-button-container {
@@ -749,11 +750,26 @@ footer {
         display: flex;
     }
 
+    .sort-container > * > *:hover {
+        cursor: pointer;
+    }
+
+    .sort-container > * > *.sort-selected {
+        color: var(--blue-green-color);
+    }
+
     .sort-container > * > * > * {
         width: 20px;
         height: 20px;
     } 
 
+    .sort-container > * > * > .sort-selected * {
+        fill: var(--blue-green-color);
+    } 
+
+    .sort-status:hover {
+        cursor: default;
+    }
 
 
 
@@ -817,7 +833,7 @@ footer {
 
 
     .book-info-form {
-        gap: 15px;
+        gap: 25px;
      }
 
      .book-info-form > * {
@@ -894,6 +910,25 @@ footer {
         fill: var(--opposite-secondary-background-color);
     }
 }
+
+
+
+
+
+
+
+
+
+
+@media (min-height: 800px) {
+    .header-container {
+        gap: 30px;
+    }
+}
+
+
+
+
 
 
 
