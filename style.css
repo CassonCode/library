@@ -560,6 +560,7 @@ footer {
 
 
 
+
 @media (max-width: 500px) {
     .mobile.add-or-edit-book-title {
         font-size: 10vw;
@@ -588,7 +589,6 @@ footer {
 
 
 
-
 @media (min-width: 900px) {
     .form-container {
         margin-top: 50px;
@@ -607,14 +607,19 @@ footer {
 ==================================================================================================== */
 @media (min-width: 1400px) and (min-height: 750px) {
 
-    /* Remove mobile-specific elements */
+    .mobile {
+        display: none !important; 
+    }
+    .desktop {
+        display: block;
+    }
 
 
 
 
-
-
-
+    body {
+        display: flex;
+    }
 
 
 }
