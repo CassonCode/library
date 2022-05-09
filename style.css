@@ -412,7 +412,7 @@ option {
 
  .input-required-alert {
     outline: 1px solid red;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 0, 0, 0.1);
  }
 
  #status-dropdown {
@@ -507,7 +507,7 @@ option {
  }
  .submit-button:hover {
      cursor: pointer;
-    background-color: #6abfc3c7;
+    background-color: #8bdadf;    /*  6abfc3c7    */
  }
 
 footer {
@@ -756,6 +756,9 @@ footer {
         font-size: 16px;
         font-weight: 700;
         display: flex;
+        -webkit-transition: color 200ms linear;
+        -ms-transition: color 200ms linear;
+        transition: color 200ms linear;
     }
 
     .sort-container > * > *:hover {
@@ -774,6 +777,10 @@ footer {
     .sort-container > * > * > .sort-selected * {
         fill: var(--blue-green-color);
     } 
+
+    .sort-status {
+        padding-bottom: 4px;
+    }
 
     .sort-status:hover {
         cursor: default;
@@ -803,6 +810,9 @@ footer {
         -ms-overflow-style: none;   /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
         border-top: 3px solid var(--books-container-outline-color);
+        -webkit-transition: background-color 200ms linear, border-color 200ms linear;
+        -ms-transition: background-color 200ms linear, border-color 200ms linear;
+        transition: background-color 200ms linear, border-color 200ms linear;
     }
 
 
