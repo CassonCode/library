@@ -166,10 +166,10 @@
             <div class="mobile filter-sort-container">
                 <select name="filter-select" class="mobile filter-select" id="mobile-filter-select">
                     <option value="all">All</option>
-                    <option value="finished">Finished</option>
+                    <option value="finished">Read</option>
                     <option value="currently-reading">Currently Reading</option>
                     <option value="abandoned">Abandoned</option>
-                    <option value="not-started">Not Started</option>
+                    <option value="not-started">Want to Read</option>
                 </select>
                 <div class="sort-buttons-container">
                     <select name="sort-select" class="mobile sort-select" id="mobile-sort-select">
@@ -190,10 +190,10 @@
             <div class="desktop filter-and-total-books-container">
                 <div class="desktop filter-container">
                     <button class="desktop filter-all filter-option-selected">All</button>
-                    <button class="desktop filter-finished">Finished: 0</button>
-                    <button class="desktop filter-currently-reading">Currently Reading: 0</button>
-                    <button class="desktop filter-abandoned">Abandoned:  0</button>
-                    <button class="desktop filter-not-started">Not Started: 0</button>
+                    <button class="desktop filter-finished">Read</button>
+                    <button class="desktop filter-currently-reading">Currently Reading</button>
+                    <button class="desktop filter-abandoned">Abandoned</button>
+                    <button class="desktop filter-not-started">Want to Read</button>
                 </div>
                 <div class="desktop total-books-container">
                     <b class="desktop total-books-text">Books</b>
@@ -207,7 +207,6 @@
                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                         </svg>
                     </button>
-                    <!-- <button class="desktop sort-title-high-low">V</button> -->
                 </div>
                 <div class="desktop sort-author-container">
                     <button class="desktop sort-author">Author
@@ -215,11 +214,9 @@
                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                         </svg>
                     </button>
-                    <!-- <button class="desktop sort-author-high-low">V</button> -->
                 </div>
                 <div class="desktop sort-status-container">
                     <button class="desktop sort-status">Status</button>
-                    <!-- <button class="desktop sort-status-high-low">V</button> -->
                 </div>
                 <div class="desktop sort-rating-container">
                     <button class="desktop sort-rating">Rating
@@ -227,7 +224,6 @@
                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                         </svg>
                     </button>
-                    <!-- <button class="desktop sort-rating0high-low">V</button> -->
                 </div>
                 <div class="desktop sort-page-count-container">
                     <button class="desktop sort-page-count">Page Count
@@ -235,7 +231,6 @@
                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                         </svg>
                     </button>
-                    <!-- <button class="desktop sort-page-count-high-low">V</button> -->
                 </div>
                 <div class="desktop sort-date-added-container">
                     <button class="desktop sort-date-added">Date Added 
@@ -243,7 +238,6 @@
                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                         </svg>
                     </button>
-                    <!-- <button class="desktop sort-date-added-high-low">V</button> -->
                 </div>
             </div>
         </div>
@@ -704,7 +698,7 @@
               </div>
                 <div class="page-count-container">
                     <label class="form-text add-edit-book-heading" for="page-count">Page Count</label>
-                    <input type="number" name="page-count" class="input-required" id="page-count" min="1" max="15,000">
+                    <input type="number" name="page-count" class="input-required" id="page-count" min="1" max="5">
                 </div>
                 <div class="add-edit-button-container">
                     <input type="button" value="Add Book" class="submit-button add-book-button">
