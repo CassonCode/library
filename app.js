@@ -17,7 +17,7 @@ const starButtons = qs(".add-book-star-button");
 const starIconFilled = qs(".add-star-active");
 const starIconOutline = qs(".add-star-inactive");
 
-let newBookRating;
+let newBookRating = 0;
  
 function setStarRating(arr) {
         arr.forEach((starButton) => {       /////// use 'forEach'  or  '.map' ?????
