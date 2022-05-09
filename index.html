@@ -637,23 +637,24 @@
             <form action="" class="book-info-form">
                 <div class="title-input-container">
                     <label class="form-text add-edit-book-heading" for="title-input">Title</label>
-                    <input type="text" name="title-input" id="title-input" maxlength="50" required>
+                    <input type="text" name="title-input" class="input-required" id="title-input" maxlength="50" required>
                 </div>
                 <div class="author-first-name-input-container">
                     <label class="form-text add-edit-book-heading" for="author-first-name-input">Author First Name</label>
-                    <input type="text" name="author-first-name-input" id="author-first-name-input" maxlength="50" required>
+                    <input type="text" name="author-first-name-input" class="input-required" id="author-first-name-input" maxlength="50" required>
                 </div>
                 <div class="author-last-name-input-container">
                     <label class="form-text add-edit-book-heading" for="author-last-name-input">Author Last Name</label>
-                    <input type="text" name="author-last-name-input" id="author-last-name-input" maxlength="50" required>
+                    <input type="text" name="author-last-name-input" class="input-required" id="author-last-name-input" maxlength="50" required>
                 </div>
                 <div class="status-dropdown-container">
                     <label class="form-text add-edit-book-heading" for="status-dropdown">Status</label>
                     <select name="status-dropdown" class="status-dropdown" id="status-dropdown" autocomplete="off">
-                        <option value="finished" selected="selected">Finished</option>
+                        <option value="want-to-read" selected="selected">Want to Read</option>
+                        <option value="read">Read</option>
                         <option value="currently-reading">Currently Reading</option>
                         <option value="abandoned">Abandoned</option>
-                        <option value="not-started">Not Started</option>
+                        <!-- <option value="not-started">Not Started</option> -->
                     </select>
                 </div>
                 <div class="add-book-rating-container">
@@ -703,7 +704,7 @@
               </div>
                 <div class="page-count-container">
                     <label class="form-text add-edit-book-heading" for="page-count">Page Count</label>
-                    <input type="number" name="page-count" id="page-count" min="1" max="15,000">
+                    <input type="number" name="page-count" class="input-required" id="page-count" min="1" max="15,000">
                 </div>
                 <div class="add-edit-button-container">
                     <input type="button" value="Add Book" class="submit-button add-book-button">

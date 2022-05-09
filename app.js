@@ -54,6 +54,10 @@ function addStarHiddenClass(star) {
 starButtons.addEventListener("click", setStarRating(starsArray));
 
 
+starsArray.forEach((button) => {
+    button.disabled = true;
+});
+
 const statusDropdown = document.getElementById("status-dropdown");
 
 statusDropdown.addEventListener("change", disableStarButtons);
@@ -62,7 +66,7 @@ function disableStarButtons(event) {
     let currentOption = statusDropdown.value;
     let newOption = event.target.value;
     
-    if (newOption === "currently-reading" || newOption === "not-started" || currentOption === "currently-reading" || currentOption === "not-started") {
+    if (newOption === "currently-reading" || newOption === "want-to-read" || currentOption === "currently-reading" || currentOption === "want-to-read") {
         starsArray.forEach((button) => {
             button.disabled = true;
             setStarRatingToZero(starsArray);
@@ -86,7 +90,101 @@ function setStarRatingToZero(arr) {
     newBookRating = 0;
 }
 
-window.onload = () => statusDropdown.value.selected = "finished";
+window.onload = () => statusDropdown.value.selected = "want-to-read";
+
+
+
+
+//
+const titleInput = document.getElementById("title-input");
+const authorFirstNameInput = document.getElementById("author-first-name-input");
+const authorLastNameInput = document.getElementById("author-last-name-input");
+const pageCountInput = document.getElementById("page-count");
+let inputArray = [...document.getElementsByClassName("input-required")];
+
+//
+function addInputIsRequiredClass(inputElement) {
+    inputElement.classList.add("input-required-alert");
+}
+function removeInputIsRequiredClass(inputElement) {
+    inputElement.classList.remove("input-required-alert");
+}
+
+//check if input is empty
+let inputisEmpty = true;
+function checkIfInputIsEmpty(input) {
+    if (input.value === "") {
+        inputisEmpty = true;
+        addInputIsRequiredClass(input);
+    }
+    else {
+        inputisEmpty = false;
+        removeInputIsRequiredClass(input);
+    }
+}
+
+//check if any input is empty
+function checkIfAnyInputIsEmpty(array) {
+    array.forEach((input) => {
+        checkIfInputIsEmpty(input);
+    });
+}
+
+let anInputIsNotEmpty = false;
+function checkIfAnyInputIsNotEmpty(array) {
+    array.forEach((input) => {
+        if (input.value !== "") {
+            anInputIsNotEmpty = true;
+        }
+    });
+}
+
+//submit button event listener
+const addBookButton = qs(".add-book-button");
+
+addBookButton.addEventListener("click", () => {
+    checkIfAnyInputIsEmpty(inputArray);
+    if (anInputIsNotEmpty) {
+        clearFormInfo();
+        //and submit book
+    }
+});
+
+//clear inputs
+function clearInputs() {
+    inputArray.forEach((input) => input.value = "");
+}
+
+
+//
+function clearFormInfo() {
+    clearInputs();
+    statusDropdown.value.selected = "want-to-read";
+}
+
+inputArray.forEach((input) => {
+    input.addEventListener("input", () => {
+        if (input.value !== "") {
+            removeInputIsRequiredClass(input);
+            inputisEmpty = false;
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

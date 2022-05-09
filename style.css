@@ -76,6 +76,9 @@ a {
 
 
 
+
+
+
 :root,
 :root.light {
    --background-color: #FFFDF3;
@@ -407,6 +410,11 @@ option {
      outline: 2px solid var(--blue-green-color);
  }
 
+ .input-required-alert {
+    outline: 1px solid red;
+    background-color: rgba(0, 0, 0, 0.05);
+ }
+
  #status-dropdown {
      border-radius: 5px;
      padding-left: 10px;
@@ -696,9 +704,9 @@ footer {
     }
 
     .filter-container > *:hover {
-        border-bottom: solid 1px var(--default-text-color);
+        /* border-bottom: solid 1px var(--default-text-color); */
         cursor: pointer;
-        border-top: solid 1px var(--background-color);
+        /* border-top: solid 1px var(--background-color); */
     }
 
     .filter-option-selected,
