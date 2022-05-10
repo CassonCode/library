@@ -559,7 +559,13 @@ footer {
     transition: background-color 200ms linear;
     position: static;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
 } 
+
+.books-section > * {
+    padding: 15px 0;
+}
 
 
 
@@ -704,7 +710,7 @@ footer {
         -webkit-transition: color 200ms linear;
         -ms-transition: color 200ms linear;
         transition: color 200ms linear;
-        height: 30px;
+        height: 36px;
     }
 
     .filter-container > *:hover {
@@ -717,16 +723,21 @@ footer {
     .filter-option-selected:hover {
         color: var(--blue-green-color);
         border-bottom: solid 3px var(--blue-green-color);
-        border-top: none;
+        /* border-top: solid 3px var(--background-color); */
+        padding-top: 3px;
+        /* font-weight: 900; */
+        -webkit-transition: color 0ms linear, border-color 200ms linear;
+        -ms-transition: color 0ms linear, border-color 200ms linear;
+        transition: color 0ms linear, border-color 200ms linear;
     }
 
 
 
     .total-books-text {
-        font-size: 26px;
+        font-size: 30px;
         font-weight: 700;
         color: var(--default-text-color);
-        border-bottom: 2px solid var(--gray-supp);
+        border-bottom: 3px solid var(--gray-supp);
         padding: 0 4px 2px 45px;
         /* padding-right: 4px; */
         -webkit-transition: color 200ms linear, border-color 200ms linear;
@@ -736,8 +747,8 @@ footer {
     }
 
     .total-books-number {
-        font-size: 26px;
-        font-weight: 700;
+        font-size: 30px;    /* 26px */
+        font-weight: 900;
         color: var(--gold-color);
         display: flex;
         justify-content: end;
@@ -752,6 +763,15 @@ footer {
         padding-top: 35px;
         padding-bottom: 3px;
         align-items: flex-end;
+    }
+
+    .sort-container > * {
+        display: flex;
+        justify-content: center;
+    }
+
+    .sort-date-added-container {
+        justify-content: start;
     }
 
     .sort-container > * > * {
@@ -771,6 +791,7 @@ footer {
 
     .sort-container > * > *.sort-selected {
         color: var(--blue-green-color);
+        font-weight: 900;
     }
 
     .sort-container > * > * > * {
