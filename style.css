@@ -474,6 +474,11 @@ option {
     display: block;
     cursor: pointer;
 }
+
+.star-visible.star-is-required {
+    fill: rgba(255, 0, 0, 0.5);
+}
+
 .star-hidden {
     display: none;
 }
