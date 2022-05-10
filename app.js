@@ -18,7 +18,8 @@ const starIconFilled = qs(".add-star-active");
 const starIconOutline = qs(".add-star-inactive");
 
 let newBookRating = 0;
- 
+let inputisEmpty = true;
+
 function setStarRating(arr) {
         arr.forEach((starButton) => {       /////// use 'forEach'  or  '.map' ?????
             starButton.onclick = () => {
@@ -114,14 +115,13 @@ function removeInputIsRequiredClass(inputElement) {
 }
 
 //check if input is empty
-let inputisEmpty = true;
 function checkIfInputIsEmpty(input) {
     if (input.value === "") {
         inputisEmpty = true;
         addInputIsRequiredClass(input);
     }
     else {
-        // inputisEmpty = false;
+        inputisEmpty = false;
         removeInputIsRequiredClass(input);
     }
 }
@@ -157,6 +157,7 @@ addBookButton.addEventListener("click", () => {
         clearFormInfo();
         //and submit book
     }
+
 });
 
 
@@ -170,7 +171,7 @@ function clearInputs() {
 function clearFormInfo() {
     clearInputs();
     setStarRatingToZero(starsArray);
-    statusDropdown.value = "want-to-read";
+    // statusDropdown.value = "want-to-read";
 }
 
 inputArray.forEach((input) => {
