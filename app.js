@@ -149,16 +149,16 @@ function checkifRequiredStarIsFilled(arr) {
     
 
 //submit button event listener
-const addBookButton = qs(".add-book-button");
-addBookButton.addEventListener("click", () => {
-    checkIfAnyInputIsEmpty(inputArray);
-    checkifRequiredStarIsFilled(starsArray);
-    if (!inputisEmpty) {
-        clearFormInfo();
-        //and submit book
-    }
+// const addBookButton = qs(".add-book-button");
+// addBookButton.addEventListener("click", () => {
+//     checkIfAnyInputIsEmpty(inputArray);
+//     checkifRequiredStarIsFilled(starsArray);
+//     if (!inputisEmpty) {
+//         //and submit book THEN clear
+//         clearFormInfo();
+//     }
 
-});
+// });
 
 
 //clear inputs
@@ -186,8 +186,77 @@ inputArray.forEach((input) => {
 
 
 
+//create array of ALL book objects
+const allBookObjectsArray = [];
+const readBooksArray = [];
+const currentlyReadingBooksArray = [];
+const abandonedBooksArray = [];
+const wantToReadBooksArray = [];
 
 
+//create book object constructor
+function Book(title, firstName, lastName, status, rating, pageCount) {
+    this.title = title;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.status = status;
+    this.rating = rating;
+    this.pageCount = pageCount;
+}
+
+//create new book using input elements' content as object arguments
+//      add newly created book object to BOTH 'allBookObjectsArray' and array for its status
+//              create actual book row using respective book object info (and assign it a unique data-set value???????) 
+//              books section display: flex column, each child (book row) is 100% width
+//                      check if row should be displayed based on which filter option is selected
+//                              if it should be displayed then first sort the filter array it is in and then display the array
+
+
+//create book object and add to all books array
+function addBookToBookArrays() {
+    const newBookObject = new Book(titleInput.value, 
+                                    authorFirstNameInput.value, 
+                                    authorLastNameInput.value, 
+                                    statusDropdown.value, 
+                                    newBookRating, 
+                                    pageCountInput.value);
+    allBookObjectsArray.unshift(newBookObject);
+    switch (newBookObject.status) {
+        case "read":
+            readBooksArray.unshift(newBookObject);
+            break;
+        case "want-to-read":
+            wantToReadBooksArray.unshift(newBookObject);
+            break;
+        case "currently-reading":
+            currentlyReadingBooksArray.unshift(newBookObject);
+            break;
+        default:
+            abandonedBooksArray.unshift(newBookObject);
+            break;
+    }
+}
+
+
+
+
+
+
+
+const addBookButton = qs(".add-book-button");
+addBookButton.addEventListener("click", () => {
+    checkIfAnyInputIsEmpty(inputArray);
+    checkifRequiredStarIsFilled(starsArray);
+    if (!inputisEmpty) {
+        //submit book THEN clear
+        addBookToBookArrays();
+        // console.log(allBookObjectsArray[allBookObjectsArray.length - 1]);
+        // console.log(wantToReadBooksArray);
+
+        clearFormInfo();
+    }
+
+});
 
 
 
