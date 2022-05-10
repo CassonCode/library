@@ -94,6 +94,7 @@ function setStarRatingToZero(arr) {
     newBookRating = 0;
 }
 
+//also include display books function
 window.onload = () => statusDropdown.value.selected = "want-to-read";
 
 
@@ -193,6 +194,8 @@ const currentlyReadingBooksArray = [];
 const abandonedBooksArray = [];
 const wantToReadBooksArray = [];
 
+const filterOptionsArray = [...document.getElementsByClassName("filter-option")];
+
 
 //create book object constructor
 function Book(title, firstName, lastName, status, rating, pageCount) {
@@ -207,7 +210,7 @@ function Book(title, firstName, lastName, status, rating, pageCount) {
 //create new book using input elements' content as object arguments
 //      add newly created book object to BOTH 'allBookObjectsArray' and array for its status
 //              create actual book row using respective book object info (and assign it a unique data-set value???????) 
-//              books section display: flex column, each child (book row) is 100% width
+//              books section display: flex column
 //                      check if row should be displayed based on which filter option is selected
 //                              if it should be displayed then first sort the filter array it is in and then display the array
 
@@ -238,6 +241,53 @@ function addBookToBookArrays() {
 }
 
 
+//loop through filteroptions array, find which one has 'selected' class, 
+// loop through corresponding filter array and create html elements of each object, then sort based on sort selected
+let selectedFilterOption = qs(".filter-option-selected");
+
+function removeFilterOptionsSelectedClass() {
+    filterOptionsArray.forEach((option) => {
+        option.classList.remove("filter-option-selected");
+    });
+}
+
+function addFilterOptionsSelectedClass(filterOption) {
+    filterOption.classList.add("filter-option-selected");
+}
+
+let totalBooksDisplayNumber = qs(".total-books-number");
+function updateDisplayedBooksCount(filterOptionSelected) {
+    switch (filterOptionSelected.innerText) {
+        case "All":
+            totalBooksDisplayNumber.textContent = allBookObjectsArray.length;
+            break;
+        case "Read":
+            totalBooksDisplayNumber.textContent = readBooksArray.length;
+            break;
+        case "Currently Reading":
+            totalBooksDisplayNumber.textContent = currentlyReadingBooksArray.length;
+            break;
+        case "Want to Read":
+            totalBooksDisplayNumber.textContent = wantToReadBooksArray.length;
+            break;
+        default:
+            totalBooksDisplayNumber.textContent = abandonedBooksArray.length;
+            break;
+    }
+}
+
+filterOptionsArray.forEach((filterOption) => {
+    filterOption.addEventListener("click", () => {
+        removeFilterOptionsSelectedClass();
+        addFilterOptionsSelectedClass(filterOption);
+        //function to update large number under 'Books'
+        updateDisplayedBooksCount(filterOption);
+        console.log(totalBooksDisplayNumber.textContent);
+        //call premade function to remove/delete all displayed books
+        //  then create and add new html elements 
+
+    })
+})
 
 
 
@@ -250,6 +300,7 @@ addBookButton.addEventListener("click", () => {
     if (!inputisEmpty) {
         //submit book THEN clear
         addBookToBookArrays();
+        updateDisplayedBooksCount(selectedFilterOption);
         // console.log(allBookObjectsArray[allBookObjectsArray.length - 1]);
         // console.log(wantToReadBooksArray);
 
