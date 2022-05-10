@@ -118,37 +118,55 @@ function checkIfInputIsEmpty(input) {
         addInputIsRequiredClass(input);
     }
     else {
-        inputisEmpty = false;
+        // inputisEmpty = false;
         removeInputIsRequiredClass(input);
     }
 }
 
 //check if any input is empty
 function checkIfAnyInputIsEmpty(array) {
+
     array.forEach((input) => {
         checkIfInputIsEmpty(input);
     });
 }
 
-let anInputIsNotEmpty = false;
-function checkIfAnyInputIsNotEmpty(array) {
-    array.forEach((input) => {
-        if (input.value !== "") {
-            anInputIsNotEmpty = true;
-        }
-    });
+// let requiredInputsAreFilled = false;
+// function checkIfAnyInputIsNotEmpty(array) {
+//     array.forEach((input) => {
+//         if (input.value !== "") {
+//             requiredInputsAreFilled = true;
+//         }
+//     });
+//     if (checkifRequiredStarIsFilled()) {
+//         requiredInputsAreFilled = false;
+//     }
+// }
+
+//check if first star is filled or not
+    //if it isn't then they all get red fill upon clicking 'add book' button
+function checkifRequiredStarIsFilled(arr) {
+    if ((statusDropdown.value === "read" || statusDropdown.value === "abandoned") && newBookRating == 0) {
+        arr.forEach((star) => {
+            star.firstElementChild.style.fill = "rgba(255, 0, 0, 0.5)";
+        });
+        inputisEmpty = true;
+    }
 }
+
+    
 
 //submit button event listener
 const addBookButton = qs(".add-book-button");
-
 addBookButton.addEventListener("click", () => {
     checkIfAnyInputIsEmpty(inputArray);
-    if (anInputIsNotEmpty) {
+    checkifRequiredStarIsFilled(starsArray);
+    if (!inputisEmpty) {
         clearFormInfo();
         //and submit book
     }
 });
+
 
 //clear inputs
 function clearInputs() {
@@ -159,7 +177,8 @@ function clearInputs() {
 //
 function clearFormInfo() {
     clearInputs();
-    statusDropdown.value.selected = "want-to-read";
+    setStarRatingToZero(starsArray);
+    statusDropdown.value = "want-to-read";
 }
 
 inputArray.forEach((input) => {
