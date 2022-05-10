@@ -29,6 +29,7 @@ function setStarRating(arr) {
                     addStarVisibleClass(activeStar);
                     addStarHiddenClass(inactiveStar);
                     newBookRating = i + 1;
+                    inactiveStar.classList.remove("star-is-required");
                 }
                 for (let i = arr.length - 1; i > arr.indexOf(starButton); i--) {
                     let currentStarButton = arr[i];
@@ -36,6 +37,7 @@ function setStarRating(arr) {
                     let inactiveStar = currentStarButton.children[1];
                     addStarVisibleClass(activeStar);
                     addStarHiddenClass(inactiveStar);
+                    activeStar.classList.remove("star-is-required");
                 }
                 console.log(`${newBookRating} out of 5 stars.`);
             }
@@ -70,6 +72,7 @@ function disableStarButtons(event) {
         starsArray.forEach((button) => {
             button.disabled = true;
             setStarRatingToZero(starsArray);
+            button.firstElementChild.classList.remove("star-is-required");
         });
     }
     else {
@@ -131,24 +134,13 @@ function checkIfAnyInputIsEmpty(array) {
     });
 }
 
-// let requiredInputsAreFilled = false;
-// function checkIfAnyInputIsNotEmpty(array) {
-//     array.forEach((input) => {
-//         if (input.value !== "") {
-//             requiredInputsAreFilled = true;
-//         }
-//     });
-//     if (checkifRequiredStarIsFilled()) {
-//         requiredInputsAreFilled = false;
-//     }
-// }
-
 //check if first star is filled or not
     //if it isn't then they all get red fill upon clicking 'add book' button
 function checkifRequiredStarIsFilled(arr) {
     if ((statusDropdown.value === "read" || statusDropdown.value === "abandoned") && newBookRating == 0) {
         arr.forEach((star) => {
-            star.firstElementChild.style.fill = "rgba(255, 0, 0, 0.5)";
+            // star.firstElementChild.style.fill = "rgba(255, 0, 0, 0.5)";
+            star.firstElementChild.classList.add("star-is-required");
         });
         inputisEmpty = true;
     }
