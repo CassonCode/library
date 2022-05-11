@@ -130,7 +130,7 @@ body {
     padding: 0px 25px;
     background-color: var(--background-color);
     display: grid;
-    grid-template-rows: auto auto;     /*  min-content min-content        min(20vh) auto  */
+    grid-template-rows: auto 1fr;     /*  min-content min-content        min(20vh) auto  */
     -webkit-transition: background-color 200ms linear;
     -ms-transition: background-color 200ms linear;
     transition: background-color 200ms linear;
@@ -553,7 +553,8 @@ footer {
 ==================================================================================================== */
 .books-section {
     background-color: var(--secondary-background-color);
-    height: 100%;
+    /* background-color: #6abfc32f; */
+    /* height: 100vh; */
     -webkit-transition: background-color 200ms linear;
     -ms-transition: background-color 200ms linear;
     transition: background-color 200ms linear;
@@ -561,7 +562,8 @@ footer {
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    scrollbar-width: 0;
+    /* scrollbar-width: 0; */
+    gap: 2px;
 } 
 
 .books-section > * {
@@ -837,15 +839,24 @@ footer {
         -webkit-transition: background-color 200ms linear, border-color 200ms linear;
         -ms-transition: background-color 200ms linear, border-color 200ms linear;
         transition: background-color 200ms linear, border-color 200ms linear;
+        overflow-y: scroll;
     }
 
     .book-container {
-        padding: 20px 0px 20px 10px;
+        padding: 0px 0px 0px 10px;
         display: grid;
         grid-template-columns: 4fr 4fr 2fr 2fr 2fr 1.5fr 1.5fr;
+        background-color: var(--secondary-background-color);
+        min-height: 66px;
+        /* align-items: center; */
         border-bottom: 2px solid #6abfc32f;   
         margin-bottom: -2px;     
     }
+    .book-container:hover {
+        background-color: var(--background-color);
+        cursor: pointer;
+    }
+
     .book-container > * {
         font-size: 14px;
         font-weight: 700;
@@ -880,7 +891,10 @@ footer {
         width: 24px;
         display: block;
     }
-
+/* 
+    .book-date-added {
+        align-self: center;
+    } */
 
 
 
