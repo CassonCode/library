@@ -893,6 +893,7 @@ footer {
         transition: background-color 200ms linear;  
     }
 
+
     .book-rating-stars-container {
         display: flex;
         justify-content: start;
@@ -930,21 +931,24 @@ footer {
 
     .delete-book-button {
         color: transparent; 
+        -webkit-transition: color 00ms linear;
+        -ms-transition: color 0ms linear;
+        transition: color 0ms linear; 
     }
     .book-container:hover > .delete-book-button {
         color: var(--delete-button-text-color);
         font-weight: 400;
-        -webkit-transition: color 50ms linear;
+        /* -webkit-transition: color 50ms linear;
         -ms-transition: color 50ms linear;
-        transition: color 50ms linear; 
+        transition: color 50ms linear;  */
     }
     .book-container:hover > .delete-book-button:hover {
         color: white;
         font-weight: 900;
         background-color: rgba(255, 0, 0, 0.808);
-        -webkit-transition: color 50ms linear;
-        -ms-transition: color 50ms linear;
-        transition: color 50ms linear; 
+        -webkit-transition: background-color 0ms linear;
+        -ms-transition: background-color 0ms linear;
+        transition: background-color 0ms linear; 
     }
 
 
@@ -969,9 +973,11 @@ footer {
 
     .desktop.title {
         font-family: 'Norse-Bold';
-        font-size: 50px;
+        font-size: 40px;
         color: var(--gold-color);
         margin-top: 40px;
+        width: 210px;
+        text-align: center;
     }
 
 
@@ -1038,7 +1044,7 @@ footer {
 
     footer {
         justify-content: center;
-        width: 230px;
+        width: 210px;
         font-size: 14px;
     }
 
