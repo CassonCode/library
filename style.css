@@ -95,6 +95,7 @@ a {
    --add-book-incomplete-color: #6E6E6E;
    --inactive-star-color: rgb(212, 212, 212);
    --books-container-outline-color: #999;
+   --delete-button-text-color: rgb(255, 155, 155);
 }
 
 :root.dark {
@@ -110,6 +111,7 @@ a {
    --add-book-incomplete-color: #bababa;
    --inactive-star-color: rgb(65, 65, 65);
    --books-container-outline-color: #F9F0E1;
+   --delete-button-text-color: rgb(168, 35, 35);
 }
 
 
@@ -930,7 +932,7 @@ footer {
         color: transparent;
     }
     .book-container:hover > .delete-book-button {
-        color: rgb(255, 147, 147);
+        color: var(--delete-button-text-color);
         font-weight: 400;
     }
     .book-container:hover > .delete-book-button:hover {
