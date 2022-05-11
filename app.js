@@ -217,6 +217,7 @@ function Book(title, firstName, lastName, status, rating, pageCount) {
 //                              if it should be displayed then first sort the filter array it is in and then display the array
 
 
+const booksSection = qs(".books-section");
 //create book object and add to all books array
 function addBookToBookArrays() {
     const newBookObject = new Book(titleInput.value, 
@@ -240,8 +241,47 @@ function addBookToBookArrays() {
             abandonedBooksArray.unshift(newBookObject);
             break;
     }
-    createBookElement(newBookObject);
+    // createBookElement(newBookObject);
+    displayFilteredBooks();
 }
+//display filtered books function that uses createBookElement
+//  put inside addToBookArrays and filter options eventListener
+function displayFilteredBooks() {
+    //remove all bookssection child elements
+    while (booksSection.firstChild) {
+        booksSection.removeChild(booksSection.firstChild);
+    }
+    let selectedFilterOption = qs(".filter-option-selected");
+    switch (selectedFilterOption.innerText) {
+        case "Read":
+            readBooksArray.forEach((book) => {
+                createBookElement(book);
+            });
+            break;
+        case "Currently Reading":
+            currentlyReadingBooksArray.forEach((book) => {
+                createBookElement(book);
+            });
+            break;
+        case "Abandoned":
+            abandonedBooksArray.forEach((book) => {
+                createBookElement(book);
+            });
+            break;
+        case "Want to Read":
+            wantToReadBooksArray.forEach((book) => {
+                createBookElement(book);
+            });
+            break;
+        default:
+            allBookObjectsArray.forEach((book) => {
+                createBookElement(book);
+            });
+            break;
+    }
+}
+
+
 
 
 //loop through filteroptions array, find which one has 'selected' class, 
@@ -313,12 +353,12 @@ filterOptionsArray.forEach((filterOption) => {
 
         //call premade function to remove/delete all displayed books
         //  then create and add new html elements 
-
+        displayFilteredBooks();
     })
 });
 
 
-const booksSection = qs(".books-section");
+
 
 function createBookElement(bookObject) {
     let bookContainer = document.createElement("div");
@@ -337,7 +377,7 @@ function createBookElement(bookObject) {
     bookStatus.innerText = bookObject.status;
     bookContainer.appendChild(bookStatus);
 
-    createStarRatingContainer(newBookRating, bookContainer);
+    createStarRatingContainer(bookObject.rating, bookContainer);
 
     let bookPageCount = document.createElement("button");
     bookPageCount.innerHTML = bookObject.pageCount;
