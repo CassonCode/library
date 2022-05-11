@@ -553,7 +553,7 @@ footer {
 ==================================================================================================== */
 .books-section {
     background-color: var(--secondary-background-color);
-    height: 100vh;
+    height: 100%;
     -webkit-transition: background-color 200ms linear;
     -ms-transition: background-color 200ms linear;
     transition: background-color 200ms linear;
@@ -561,6 +561,7 @@ footer {
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
+    scrollbar-width: 0;
 } 
 
 .books-section > * {
@@ -714,9 +715,7 @@ footer {
     }
 
     .filter-container > *:hover {
-        /* border-bottom: solid 1px var(--default-text-color); */
         cursor: pointer;
-        /* border-top: solid 1px var(--background-color); */
     }
 
     .filter-option-selected,
@@ -760,9 +759,9 @@ footer {
     .sort-container {
         display: grid;
         grid-template-columns: 4fr 4fr 2fr 2fr 2fr 3fr;
-        padding-top: 35px;
-        padding-bottom: 3px;
+        padding: 40px 0 3px 10px;
         align-items: flex-end;
+        border-bottom: 3px solid var(--books-container-outline-color);
     }
 
     .sort-container > * {
@@ -834,11 +833,68 @@ footer {
     .books-section {
         -ms-overflow-style: none;   /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
-        border-top: 3px solid var(--books-container-outline-color);
+        /* border-top: 3px solid var(--books-container-outline-color); */
         -webkit-transition: background-color 200ms linear, border-color 200ms linear;
         -ms-transition: background-color 200ms linear, border-color 200ms linear;
         transition: background-color 200ms linear, border-color 200ms linear;
     }
+
+    .book-container {
+        padding: 20px 0px 20px 10px;
+        display: grid;
+        grid-template-columns: 4fr 4fr 2fr 2fr 2fr 1.5fr 1.5fr;
+        border-bottom: 2px solid #6abfc32f;   
+        margin-bottom: -2px;     
+    }
+    .book-container > * {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--default-text-color);
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        -webkit-transition: color 200ms linear;
+        -ms-transition: color 200ms linear;
+        transition: color 200ms linear;        
+        text-align: center;
+    }
+    .book-container > *:hover {
+        cursor: pointer;
+        color: var(--gold-color);
+        /* font-weight: 700; */
+        background-color: var(--background-color);
+    }
+
+    .book-rating-stars-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* gap: 5px; */
+        width: 100%;
+    }
+
+    .individual-book-star {
+        fill: var(--blue-green-color);
+        height: 24px;
+        width: 24px;
+        display: block;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

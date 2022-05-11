@@ -238,6 +238,7 @@ function addBookToBookArrays() {
             abandonedBooksArray.unshift(newBookObject);
             break;
     }
+    createBookElement(newBookObject);
 }
 
 
@@ -287,13 +288,81 @@ filterOptionsArray.forEach((filterOption) => {
         //  then create and add new html elements 
 
     })
-})
+});
 
+
+const booksSection = qs(".books-section");
+
+function createBookElement(bookObject) {
+    let bookContainer = document.createElement("div");
+    bookContainer.classList.add("book-container");
+    booksSection.appendChild(bookContainer);
+
+    let bookTitleContainer = document.createElement("button");
+    bookTitleContainer.innerText = bookObject.title;
+    bookContainer.appendChild(bookTitleContainer);
+
+    let bookAuthorNameContainer = document.createElement("button");
+    bookAuthorNameContainer.innerText = combineAuthorName(bookObject.firstName, bookObject.lastName);
+    bookContainer.appendChild(bookAuthorNameContainer);
+
+    let bookStatus = document.createElement("button");
+    bookStatus.innerText = bookObject.status;
+    bookContainer.appendChild(bookStatus);
+
+    createStarRatingContainer(newBookRating, bookContainer);
+
+    let bookPageCount = document.createElement("button");
+    bookPageCount.innerHTML = bookObject.pageCount;
+    bookContainer.appendChild(bookPageCount);
+
+    let bookCreationDate = document.createElement("div");
+    bookCreationDate.innerHTML = getBookObjectCreationDate();
+    bookContainer.appendChild(bookCreationDate);
+    
+    //create delete button
+    let bookDeleteButton = document.createElement("button");
+    bookDeleteButton.innerHTML = "Delete";
+    bookContainer.appendChild(bookDeleteButton);
+}
+
+//create function to get date of book creation
+function getBookObjectCreationDate() {
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+    // document.write(today);
+    return today;
+}
+
+//function to create star div container that holds stars for individual books
+function createStarRatingContainer(numberRating, bookContainer) {
+    let bookRatingStarsContainer = document.createElement("div");
+    bookRatingStarsContainer.classList.add("book-rating-stars-container");
+    bookContainer.appendChild(bookRatingStarsContainer);
+    if (numberRating > 0) {
+        for (let i = 0; i < numberRating; i++) {
+            let star = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            star.classList.add("individual-book-star");
+            star.innerHTML = '<path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />';
+            bookRatingStarsContainer.appendChild(star);
+        }
+    }
+}
+
+//create function that accepts to arguments (first and last name), turns it into 'Last, First'
+function combineAuthorName(firstName, lastName) {
+    return `${lastName}, ${firstName}`;
+}
 
 
 
 
 const addBookButton = qs(".add-book-button");
+
 addBookButton.addEventListener("click", () => {
     checkIfAnyInputIsEmpty(inputArray);
     checkifRequiredStarIsFilled(starsArray);
