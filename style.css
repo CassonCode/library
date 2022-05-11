@@ -884,6 +884,9 @@ footer {
         /* gap: 5px; */
         width: 100%;
     }
+    .book-rating-stars-container > *:hover {
+        fill: var(--gold-color);
+    }
 
     .individual-book-star {
         fill: var(--blue-green-color);
@@ -891,6 +894,9 @@ footer {
         width: 24px;
         display: block;
     }
+    /* .individual-book-star:hover {
+        fill: var(--gold-color);
+    } */
 
     .book-creation-date-text:hover {
         cursor: default;

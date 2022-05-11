@@ -340,17 +340,6 @@ function createBookElement(bookObject) {
     bookContainer.appendChild(bookDeleteButton);
 }
 
-//create function to get date of book creation
-// function getBookObjectCreationDate() {
-//     let today = new Date();
-//     let dd = String(today.getDate()).padStart(2, '0');
-//     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-//     let yyyy = today.getFullYear();
-
-//     today = mm + '/' + dd + '/' + yyyy;
-//     // document.write(today);
-//     return today;
-// }
 
 //function to create star div container that holds stars for individual books
 function createStarRatingContainer(numberRating, bookContainer) {
@@ -366,6 +355,8 @@ function createStarRatingContainer(numberRating, bookContainer) {
         }
     }
 }
+
+
 
 //create function that accepts to arguments (first and last name), turns it into 'Last, First'
 function combineAuthorName(firstName, lastName) {
