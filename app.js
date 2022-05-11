@@ -246,7 +246,7 @@ function addBookToBookArrays() {
 
 //loop through filteroptions array, find which one has 'selected' class, 
 // loop through corresponding filter array and create html elements of each object, then sort based on sort selected
-let selectedFilterOption = qs(".filter-option-selected");
+// let selectedFilterOption = qs(".filter-option-selected");
 
 function removeFilterOptionsSelectedClass() {
     filterOptionsArray.forEach((option) => {
@@ -259,33 +259,58 @@ function addFilterOptionsSelectedClass(filterOption) {
 }
 
 let totalBooksDisplayNumber = qs(".total-books-number");
-function updateDisplayedBooksCount(filterOptionSelected) {
-    switch (filterOptionSelected.innerText) {
+// function updateDisplayedBooksCount(filterOptionSelected) {
+//     switch (filterOptionSelected.innerText) {
+//         case "All":
+//             totalBooksDisplayNumber.innerText = allBookObjectsArray.length;
+//             break;
+//         case "Read":
+//             totalBooksDisplayNumber.innerText = readBooksArray.length;
+//             break;
+//         case "Currently Reading":
+//             totalBooksDisplayNumber.innerText = currentlyReadingBooksArray.length;
+//             break;
+//         case "Want to Read":
+//             totalBooksDisplayNumber.innerText = wantToReadBooksArray.length;
+//             break;
+//         default:
+//             totalBooksDisplayNumber.innerText = abandonedBooksArray.length;
+//             break;
+//     }
+// }
+function updateDisplayedBooksCount() {
+    let selectedFilterOption = qs(".filter-option-selected");
+    switch (selectedFilterOption.innerText) {
         case "All":
-            totalBooksDisplayNumber.textContent = allBookObjectsArray.length;
+            totalBooksDisplayNumber.innerText = allBookObjectsArray.length;
             break;
         case "Read":
-            totalBooksDisplayNumber.textContent = readBooksArray.length;
+            totalBooksDisplayNumber.innerText = readBooksArray.length;
             break;
         case "Currently Reading":
-            totalBooksDisplayNumber.textContent = currentlyReadingBooksArray.length;
+            totalBooksDisplayNumber.innerText = currentlyReadingBooksArray.length;
             break;
         case "Want to Read":
-            totalBooksDisplayNumber.textContent = wantToReadBooksArray.length;
+            totalBooksDisplayNumber.innerText = wantToReadBooksArray.length;
             break;
         default:
-            totalBooksDisplayNumber.textContent = abandonedBooksArray.length;
+            totalBooksDisplayNumber.innerText = abandonedBooksArray.length;
             break;
     }
 }
+
 
 filterOptionsArray.forEach((filterOption) => {
     filterOption.addEventListener("click", () => {
         removeFilterOptionsSelectedClass();
         addFilterOptionsSelectedClass(filterOption);
         //function to update large number under 'Books'
-        updateDisplayedBooksCount(filterOption);
-        console.log(totalBooksDisplayNumber.textContent);
+        updateDisplayedBooksCount();
+
+
+
+        // console.log(totalBooksDisplayNumber.textContent);
+
         //call premade function to remove/delete all displayed books
         //  then create and add new html elements 
 
@@ -383,6 +408,7 @@ function deleteBook(deleteButton, bookObject, bookContainer, booksSection) {
             default:
                 abandonedBooksArray.splice(abandonedBooksArray.indexOf(bookObject), 1);
         }
+        updateDisplayedBooksCount();
     });
 }
 
@@ -398,9 +424,11 @@ addBookButton.addEventListener("click", () => {
     if (!inputisEmpty) {
         //submit book THEN clear
         addBookToBookArrays();
-        updateDisplayedBooksCount(selectedFilterOption);
-        // console.log(allBookObjectsArray[allBookObjectsArray.length - 1]);
-        // console.log(wantToReadBooksArray);
+        updateDisplayedBooksCount();
+            console.log(readBooksArray);
+            console.log(currentlyReadingBooksArray);
+            console.log(abandonedBooksArray);
+            console.log(wantToReadBooksArray);
 
         clearFormInfo();
     }

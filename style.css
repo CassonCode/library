@@ -929,16 +929,22 @@ footer {
     }
 
     .delete-book-button {
-        color: transparent;
+        color: transparent; 
     }
     .book-container:hover > .delete-book-button {
         color: var(--delete-button-text-color);
         font-weight: 400;
+        -webkit-transition: color 50ms linear;
+        -ms-transition: color 50ms linear;
+        transition: color 50ms linear; 
     }
     .book-container:hover > .delete-book-button:hover {
         color: white;
         font-weight: 900;
         background-color: rgba(255, 0, 0, 0.808);
+        -webkit-transition: color 50ms linear;
+        -ms-transition: color 50ms linear;
+        transition: color 50ms linear; 
     }
 
 
