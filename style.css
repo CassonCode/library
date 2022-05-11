@@ -823,15 +823,15 @@ footer {
 
 
 
-    .books-section::-webkit-scrollbar {
+    /* .books-section::-webkit-scrollbar {
         width: 0px;
         background: transparent; 
-    }
+    } */
 
     /* Hide scrollbar for IE, Edge and Firefox */
     .books-section {
-        -ms-overflow-style: none;   /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+        /* -ms-overflow-style: none;   
+        scrollbar-width: none;   */
         /* border-top: 3px solid var(--books-container-outline-color); */
         -webkit-transition: background-color 200ms linear, border-color 200ms linear;
         -ms-transition: background-color 200ms linear, border-color 200ms linear;
@@ -852,6 +852,9 @@ footer {
     .book-container:hover {
         background-color: var(--background-color);
         cursor: pointer;
+        /* -webkit-transition: background-color 200ms linear;
+        -ms-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;   */
     }
     .book-container:hover > * {
         color: var(--opposite-background-color);
@@ -876,6 +879,9 @@ footer {
         color: var(--gold-color);
         /* font-weight: 700; */
         background-color: var(--background-color);
+        -webkit-transition: background-color 200ms linear;
+        -ms-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;  
     }
 
     .book-rating-stars-container {
@@ -903,8 +909,6 @@ footer {
         cursor: default;
         color: var(--opposite-background-color);
     }
-
-
 
 
 
