@@ -891,10 +891,11 @@ footer {
         width: 24px;
         display: block;
     }
-/* 
-    .book-date-added {
-        align-self: center;
-    } */
+
+    .book-creation-date-text:hover {
+        cursor: default;
+        color: var(--default-text-color);
+    }
 
 
 

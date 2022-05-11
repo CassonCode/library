@@ -291,6 +291,13 @@ filterOptionsArray.forEach((filterOption) => {
 });
 
 
+// let today = new Date();
+//     let dd = String(today.getDate()).padStart(2, '0');
+//     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+//     let yyyy = today.getFullYear();
+
+//     today = mm + '/' + dd + '/' + yyyy;
+
 const booksSection = qs(".books-section");
 
 function createBookElement(bookObject) {
@@ -316,8 +323,15 @@ function createBookElement(bookObject) {
     bookPageCount.innerHTML = bookObject.pageCount;
     bookContainer.appendChild(bookPageCount);
 
-    let bookCreationDate = document.createElement("div");
-    bookCreationDate.innerHTML = getBookObjectCreationDate();
+    let bookCreationDate = document.createElement("button");
+    bookCreationDate.classList.add("book-creation-date-text");
+    // bookCreationDate.innerHTML = getBookObjectCreationDate();
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+    bookCreationDate.innerHTML = today;
     bookContainer.appendChild(bookCreationDate);
     
     //create delete button
@@ -327,16 +341,16 @@ function createBookElement(bookObject) {
 }
 
 //create function to get date of book creation
-function getBookObjectCreationDate() {
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    let yyyy = today.getFullYear();
+// function getBookObjectCreationDate() {
+//     let today = new Date();
+//     let dd = String(today.getDate()).padStart(2, '0');
+//     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+//     let yyyy = today.getFullYear();
 
-    today = mm + '/' + dd + '/' + yyyy;
-    // document.write(today);
-    return today;
-}
+//     today = mm + '/' + dd + '/' + yyyy;
+//     // document.write(today);
+//     return today;
+// }
 
 //function to create star div container that holds stars for individual books
 function createStarRatingContainer(numberRating, bookContainer) {
