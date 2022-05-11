@@ -77,6 +77,8 @@ a {
 
 
 
+
+
 :root,
 :root.light {
    --background-color: #FFFDF3;
@@ -649,7 +651,7 @@ footer {
 /* ====================================================================================================
     Desktop Media Queries   ===========================================================================
 ==================================================================================================== */
-@media (min-width: 1400px) and (min-height: 750px) {   
+@media (min-width: 1400px) and (min-height: 700px) {   
 
 
     .mobile {
@@ -761,7 +763,7 @@ footer {
 
     .sort-container {
         display: grid;
-        grid-template-columns: 4fr 4fr 2fr 2fr 2fr 3fr;
+        grid-template-columns: 4fr 4fr 2fr 2fr 2fr 1.5fr 1.5fr;
         padding: 40px 0 3px 10px;
         align-items: flex-end;
         border-bottom: 3px solid var(--books-container-outline-color);
@@ -775,9 +777,9 @@ footer {
         justify-content: center;
     }
 
-    .sort-date-added-container {
+    /* .sort-date-added-container {
         justify-content: start;
-    }
+    } */
 
     .sort-container > * > * {
         background-color: transparent;
@@ -823,21 +825,23 @@ footer {
 
 
 
-    /* .books-section::-webkit-scrollbar {
+    .books-section::-webkit-scrollbar {
         width: 0px;
         background: transparent; 
-    } */
+    }
 
     /* Hide scrollbar for IE, Edge and Firefox */
     .books-section {
-        /* -ms-overflow-style: none;   
-        scrollbar-width: none;   */
+        -ms-overflow-style: none;   
+        scrollbar-width: none;  
         /* border-top: 3px solid var(--books-container-outline-color); */
         -webkit-transition: background-color 200ms linear, border-color 200ms linear;
         -ms-transition: background-color 200ms linear, border-color 200ms linear;
         transition: background-color 200ms linear, border-color 200ms linear;
         overflow-y: scroll;
     }
+
+    
 
     .book-container {
         padding: 0px 0px 0px 10px;
@@ -856,6 +860,9 @@ footer {
         -ms-transition: background-color 200ms linear;
         transition: background-color 200ms linear;   */
     }
+
+   
+
     .book-container:hover > * {
         color: var(--opposite-background-color);
         font-weight: 700;
@@ -886,7 +893,7 @@ footer {
 
     .book-rating-stars-container {
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         /* gap: 5px; */
         width: 100%;
@@ -911,9 +918,26 @@ footer {
     }
 
 
+    .book-container > *:nth-child(1),
+    .book-container > *:nth-child(2) {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-left: 10px;
+    }
 
-
-
+    .delete-book-button {
+        color: transparent;
+    }
+    .book-container:hover > .delete-book-button {
+        color: rgb(255, 147, 147);
+        font-weight: 400;
+    }
+    .book-container:hover > .delete-book-button:hover {
+        color: white;
+        font-weight: 900;
+        background-color: rgba(255, 0, 0, 0.808);
+    }
 
 
 
@@ -1041,7 +1065,26 @@ footer {
 
 
 
-
+@media (min-width: 1500px) and (min-height: 750px) {
+    .book-rating-stars-container {
+        padding-left: 5%;
+    }
+}
+@media (min-width: 1600px) and (min-height: 750px) {
+    .book-rating-stars-container {
+        padding-left: 7%;
+    }
+}
+@media (min-width: 1700px) and (min-height: 750px) {
+    .book-rating-stars-container {
+        padding-left: 9%;
+    }
+}
+@media (min-width: 1750px) and (min-height: 750px) {
+    .book-rating-stars-container {
+        padding-left: 10%;
+    }
+}
 
 
 
@@ -1086,6 +1129,11 @@ footer {
     .form-container {
         width: 230px;
     }    
+
+
+    .book-rating-stars-container {
+        padding-left: 12%;
+    }
 }
 
 

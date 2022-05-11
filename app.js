@@ -207,6 +207,8 @@ function Book(title, firstName, lastName, status, rating, pageCount) {
     this.pageCount = pageCount;
 }
 
+
+
 //create new book using input elements' content as object arguments
 //      add newly created book object to BOTH 'allBookObjectsArray' and array for its status
 //              create actual book row using respective book object info (and assign it a unique data-set value???????) 
@@ -291,13 +293,6 @@ filterOptionsArray.forEach((filterOption) => {
 });
 
 
-// let today = new Date();
-//     let dd = String(today.getDate()).padStart(2, '0');
-//     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-//     let yyyy = today.getFullYear();
-
-//     today = mm + '/' + dd + '/' + yyyy;
-
 const booksSection = qs(".books-section");
 
 function createBookElement(bookObject) {
@@ -331,13 +326,18 @@ function createBookElement(bookObject) {
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
     today = mm + '/' + dd + '/' + yyyy;
-    bookCreationDate.innerHTML = today;
+    if (!bookObject.date) {
+        bookObject.date = today;
+    }
+    bookCreationDate.innerHTML = bookObject.date;
     bookContainer.appendChild(bookCreationDate);
     
     //create delete button
     let bookDeleteButton = document.createElement("button");
     bookDeleteButton.innerHTML = "Delete";
+    bookDeleteButton.classList.add("delete-book-button");
     bookContainer.appendChild(bookDeleteButton);
+    deleteBook(bookDeleteButton, bookObject, bookContainer, booksSection);
 }
 
 
@@ -362,6 +362,30 @@ function createStarRatingContainer(numberRating, bookContainer) {
 function combineAuthorName(firstName, lastName) {
     return `${lastName}, ${firstName}`;
 }
+
+
+//delete button removes bookContainer element from booksSection element
+//  also removes it from 'all' array and relevant filter array (slice/splice out its array position?) 
+function deleteBook(deleteButton, bookObject, bookContainer, booksSection) {
+    deleteButton.addEventListener("click", () => {
+        booksSection.removeChild(bookContainer);
+        allBookObjectsArray.splice(allBookObjectsArray.indexOf(bookObject), 1);
+        switch (bookObject.status) {
+            case "read":
+                readBooksArray.splice(readBooksArray.indexOf(bookObject), 1);
+                break;
+            case "currently-reading":
+                currentlyReadingBooksArray.splice(currentlyReadingBooksArray.indexOf(bookObject), 1);
+                break;
+            case "want-to-read":
+                wantToReadBooksArray.splice(wantToReadBooksArray.indexOf(bookObject), 1);
+                break;
+            default:
+                abandonedBooksArray.splice(abandonedBooksArray.indexOf(bookObject), 1);
+        }
+    });
+}
+
 
 
 
