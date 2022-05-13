@@ -366,10 +366,12 @@ function createBookElement(bookObject) {
     booksSection.appendChild(bookContainer);
 
     let bookTitleContainer = document.createElement("button");
+    bookTitleContainer.classList.add("book-overflow-text");
     bookTitleContainer.innerText = bookObject.title;
     bookContainer.appendChild(bookTitleContainer);
 
     let bookAuthorNameContainer = document.createElement("button");
+    bookAuthorNameContainer.classList.add("book-overflow-text");
     bookAuthorNameContainer.innerText = combineAuthorName(bookObject.firstName, bookObject.lastName);
     bookContainer.appendChild(bookAuthorNameContainer);
 
