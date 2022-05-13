@@ -515,8 +515,14 @@ option {
     padding: 0;
  }
  .submit-button:hover {
-     cursor: pointer;
-    background-color: #8bdadf;    /*  6abfc3c7    */
+    cursor: pointer;
+    background-color: #6abfc3c7;    /*  6abfc3c7  */
+    -webkit-transition: background-color 50ms linear;
+    -ms-transition: background-color 50ms linear;
+    transition: background-color 50ms linear;
+ }
+ .dark .submit-button:hover {
+     background-color: #1e5457;
  }
 
 footer {
@@ -908,9 +914,10 @@ footer {
         /* gap: 5px; */
         width: 100%;
     }
-    .book-rating-stars-container > *:hover {
+    .book-rating-stars-container:hover > * {
         fill: var(--gold-color);
     }
+    
 
     .individual-book-star {
         fill: var(--blue-green-color);
