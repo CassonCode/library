@@ -557,12 +557,13 @@ footer {
     Books Section   ===================================================================================
 ==================================================================================================== */
 .books-section {
-    background-color: var(--secondary-background-color);
+    /* background-color: var(--secondary-background-color); */
+    background-color: transparent;
     /* background-color: #6abfc32f; */
     /* height: 100vh; */
-    -webkit-transition: background-color 200ms linear;
+    /* -webkit-transition: background-color 200ms linear;
     -ms-transition: background-color 200ms linear;
-    transition: background-color 200ms linear;
+    transition: background-color 200ms linear; */
     position: static;
     overflow-y: scroll;
     display: flex;
@@ -851,17 +852,21 @@ footer {
         display: grid;
         grid-template-columns: 4fr 4fr 2fr 2fr 2fr 1.5fr 1.5fr;
         /* background-color: var(--secondary-background-color); */
+        background-color: var(--secondary-background-color);
         min-height: 66px;
         /* align-items: center; */
         border-bottom: 2px solid #6abfc32f;   
         margin-bottom: -2px;     
+        -webkit-transition: background-color 200ms linear;
+        -ms-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
     }
     .book-container:hover {
         background-color: var(--background-color);
         cursor: pointer;
-        /* -webkit-transition: background-color 200ms linear;
-        -ms-transition: background-color 200ms linear;
-        transition: background-color 200ms linear;   */
+        -webkit-transition: background-color 100ms linear;
+        -ms-transition: background-color 100ms linear;
+        transition: background-color 100ms linear;  
     }
 
    
@@ -870,6 +875,7 @@ footer {
         color: var(--opposite-background-color);
         /* font-weight: 400; */
     }
+
 
     .book-container > * {
         font-size: 14px;
