@@ -172,6 +172,7 @@ function clearInputs() {
 function clearFormInfo() {
     clearInputs();
     setStarRatingToZero(starsArray);
+    inputisEmpty = true;
     // statusDropdown.value = "want-to-read";
 }
 
@@ -195,6 +196,31 @@ const abandonedBooksArray = [];
 const wantToReadBooksArray = [];
 
 const filterOptionsArray = [...document.getElementsByClassName("filter-option")];
+
+//sort arrays
+function sortArrayByTitle(array) {
+
+}
+function sortArrayByAuthor(array) {
+
+}
+function sortArrayByRating(array) {
+
+}
+function sortArrayByPageCount(array) {
+
+}
+function sortArrayByDateAdded(array) {
+
+}
+
+//function to combine sort functions using if statements based on which sort button is active
+//      goes inside addBookToBookArrays()
+
+//sort button event listeners
+//  include  1.give clicked sort button a 'selected' class  2.add sort function  3.add displayFilteredBooks()
+
+
 
 
 //create book object constructor
@@ -226,22 +252,27 @@ function addBookToBookArrays() {
                                     statusDropdown.value, 
                                     newBookRating, 
                                     pageCountInput.value);
+                                    
     allBookObjectsArray.unshift(newBookObject);
+    //sort array
     switch (newBookObject.status) {
         case "read":
             readBooksArray.unshift(newBookObject);
+            //sort array
             break;
         case "want-to-read":
             wantToReadBooksArray.unshift(newBookObject);
+            //sort array
             break;
         case "currently-reading":
             currentlyReadingBooksArray.unshift(newBookObject);
+            //sort array
             break;
         default:
             abandonedBooksArray.unshift(newBookObject);
+            //sort array
             break;
     }
-    // createBookElement(newBookObject);
     displayFilteredBooks();
 }
 //display filtered books function that uses createBookElement
@@ -477,10 +508,14 @@ addBookButton.addEventListener("click", () => {
 
 });
 
-
-
-
-
+addBookButton.addEventListener("pointerdown", () => {
+    if (!inputisEmpty) {
+        addBookButton.classList.add("submit-button-pushed-down");
+    }
+});
+addBookButton.addEventListener("pointerup", () => {
+    addBookButton.classList.remove("submit-button-pushed-down");
+});
 
 
 
