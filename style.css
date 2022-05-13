@@ -723,6 +723,7 @@ footer {
 
     .filter-container > *:hover {
         cursor: pointer;
+        color: #98e2e6;
     }
 
     .filter-option-selected,
@@ -867,12 +868,12 @@ footer {
 
     .book-container:hover > * {
         color: var(--opposite-background-color);
-        font-weight: 700;
+        /* font-weight: 400; */
     }
 
     .book-container > * {
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 700;
         color: var(--default-text-color);
         height: 100%;
         width: 100%;
@@ -958,6 +959,7 @@ footer {
         text-overflow: ellipsis;
         white-space: nowrap;
         padding-left: 10px;
+        text-align: left;
     }
 
     /* .book-container > *:nth-child(2) {
