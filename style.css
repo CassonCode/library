@@ -96,6 +96,7 @@ a {
    --inactive-star-color: rgb(212, 212, 212);
    --books-container-outline-color: #999;
    --delete-button-text-color: rgb(255, 155, 155);
+   --book-text-color: #6E6E6E;
 }
 
 :root.dark {
@@ -112,6 +113,7 @@ a {
    --inactive-star-color: rgb(65, 65, 65);
    --books-container-outline-color: #F9F0E1;
    --delete-button-text-color: rgb(168, 35, 35);
+   --book-text-color: #bababa;
 }
 
 
@@ -893,7 +895,8 @@ footer {
     .book-container > * {
         font-size: 15px;
         font-weight: 700;
-        color: var(--default-text-color);
+        /* color: var(--default-text-color); */
+        color: var(--book-text-color);
         height: 100%;
         width: 100%;
         background-color: transparent;
@@ -903,6 +906,8 @@ footer {
         transition: color 200ms linear;        
         text-align: center;
     }
+    
+    
     .book-container > *:hover {
         cursor: pointer;
         color: var(--gold-color);
@@ -921,7 +926,8 @@ footer {
         /* gap: 5px; */
         width: 100%;
     }
-    .book-rating-stars-container:hover > * {
+    .book-rating-stars-container:hover > *,
+    .dark .book-rating-stars-container:hover > * {
         fill: var(--gold-color);
     }
     
