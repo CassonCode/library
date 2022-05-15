@@ -220,6 +220,8 @@ function sortArrayByPageCount(array) {
     array.sort((a,b) => b.pageCount - a.pageCount);
 }
 function sortArrayByDateAdded(array) {
+    //sort by day, then month, then year
+    
 
 }
 

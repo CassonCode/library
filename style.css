@@ -714,7 +714,7 @@ footer {
     .filter-container {
         display: flex;
         align-items: center;
-        gap: 50px;
+        gap: 10px;
     }
 
     .filter-container > * {
@@ -726,6 +726,8 @@ footer {
         -ms-transition: color 200ms linear;
         transition: color 200ms linear;
         height: 36px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .filter-container > *:hover {
@@ -736,10 +738,8 @@ footer {
     .filter-option-selected,
     .filter-option-selected:hover {
         color: var(--blue-green-color);
-        border-bottom: solid 3px var(--blue-green-color);
-        /* border-top: solid 3px var(--background-color); */
-        padding-top: 3px;
-        /* font-weight: 900; */
+        /* border-bottom: solid 3px var(--blue-green-color);
+        padding-top: 3px; */
         -webkit-transition: color 0ms linear, border-color 200ms linear;
         -ms-transition: color 0ms linear, border-color 200ms linear;
         transition: color 0ms linear, border-color 200ms linear;
