@@ -706,6 +706,9 @@ footer {
     .theme-button:hover {
         cursor: pointer;
     }
+    .theme-button:hover > * {
+        fill: var(--opposite-secondary-background-color);
+    }
 
 
     .filter-and-total-books-container {
