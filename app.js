@@ -220,9 +220,8 @@ function sortArrayByPageCount(array) {
     array.sort((a,b) => b.pageCount - a.pageCount);
 }
 function sortArrayByDateAdded(array) {
-    //sort by day, then month, then year
-    
-
+    //sort by day, then month, then year ???????
+    array.sort((a,b) => b.fullDate - a.fullDate);
 }
 
 //function to combine sort functions using if statements based on which sort button is active  
@@ -249,6 +248,11 @@ sortByRatingButton.addEventListener("click", () => {
 sortByPageCountButton.addEventListener("click", () => {
     reassignSortSelectedClass(sortByPageCountButton);
     filterArrays.forEach((array) => sortArrayByPageCount(array));
+    displayFilteredBooks();
+});
+sortByDateAddedButton.addEventListener("click", () => {
+    reassignSortSelectedClass(sortByDateAddedButton);
+    filterArrays.forEach((array) => sortArrayByDateAdded(array));
     displayFilteredBooks();
 });
 function reassignSortSelectedClass(sortButton) {
@@ -368,25 +372,6 @@ function addFilterOptionsSelectedClass(filterOption) {
 }
 
 let totalBooksDisplayNumber = qs(".total-books-number");
-// function updateDisplayedBooksCount(filterOptionSelected) {
-//     switch (filterOptionSelected.innerText) {
-//         case "All":
-//             totalBooksDisplayNumber.innerText = allBookObjectsArray.length;
-//             break;
-//         case "Read":
-//             totalBooksDisplayNumber.innerText = readBooksArray.length;
-//             break;
-//         case "Currently Reading":
-//             totalBooksDisplayNumber.innerText = currentlyReadingBooksArray.length;
-//             break;
-//         case "Want to Read":
-//             totalBooksDisplayNumber.innerText = wantToReadBooksArray.length;
-//             break;
-//         default:
-//             totalBooksDisplayNumber.innerText = abandonedBooksArray.length;
-//             break;
-//     }
-// }
 function updateDisplayedBooksCount() {
     let selectedFilterOption = qs(".filter-option-selected");
     switch (selectedFilterOption.innerText) {
@@ -413,15 +398,7 @@ filterOptionsArray.forEach((filterOption) => {
     filterOption.addEventListener("click", () => {
         removeFilterOptionsSelectedClass();
         addFilterOptionsSelectedClass(filterOption);
-        //function to update large number under 'Books'
         updateDisplayedBooksCount();
-
-
-
-        // console.log(totalBooksDisplayNumber.textContent);
-
-        //call premade function to remove/delete all displayed books
-        //  then create and add new html elements 
         displayFilteredBooks();
     })
 });
@@ -457,7 +434,9 @@ function createBookElement(bookObject) {
     let bookCreationDate = document.createElement("button");
     bookCreationDate.classList.add("book-creation-date-text");
     // bookCreationDate.innerHTML = getBookObjectCreationDate();
-    let today = new Date();
+    let newDate = new Date();
+    let today = newDate;
+    bookObject.fullDate = newDate;
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();

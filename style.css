@@ -809,7 +809,7 @@ footer {
 
     .sort-container > * > *.sort-selected {
         color: var(--blue-green-color);
-        font-weight: 900;
+        font-weight: 700;
     }
 
     .sort-container > * > * > * {
