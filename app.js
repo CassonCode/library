@@ -194,15 +194,24 @@ const readBooksArray = [];
 const currentlyReadingBooksArray = [];
 const abandonedBooksArray = [];
 const wantToReadBooksArray = [];
-
+const filterArrays = [allBookObjectsArray, readBooksArray, currentlyReadingBooksArray, abandonedBooksArray, wantToReadBooksArray];
 const filterOptionsArray = [...document.getElementsByClassName("filter-option")];
+
+
+const sortByTitleButton = qs(".sort-title");
+const sortByAuthorButton = qs(".sort-author");
+const sortByRatingButton = qs(".sort-rating");
+const sortByPageCountButton = qs(".sort-page-count");
+const sortByDateAddedButton = qs(".sort-date-added");
 
 //sort arrays
 function sortArrayByTitle(array) {
-
+    // array.sort((a,b) => a.title - b.title);
+    array.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
 }
 function sortArrayByAuthor(array) {
-
+    // array.sort((a,b) => a.lastName - b.lastName);
+    array.sort((a,b) => (a.lastName > b.lastName) ? 1 : ((b.lastName > a.lastName) ? -1 : 0));
 }
 function sortArrayByRating(array) {
 
@@ -219,7 +228,27 @@ function sortArrayByDateAdded(array) {
 
 //sort button event listeners
 //  include  1.give clicked sort button a 'selected' class  2.add sort function  3.add displayFilteredBooks()
+sortByTitleButton.addEventListener("click", () => {
+    reassignSortSelectedClass(sortByTitleButton);
+    filterArrays.forEach((array) => sortArrayByTitle(array));
+    displayFilteredBooks();
+    console.log(allBookObjectsArray);
+});
+sortByAuthorButton.addEventListener("click", () => {
+    reassignSortSelectedClass(sortByAuthorButton);
+    filterArrays.forEach((array) => sortArrayByAuthor(array));
+    displayFilteredBooks();
+    console.log(allBookObjectsArray);
+});
 
+
+function reassignSortSelectedClass(sortButton) {
+    let selectedSortOption = qs(".sort-selected");
+    if (selectedSortOption !== sortButton) {
+        selectedSortOption.classList.remove("sort-selected");
+        sortButton.classList.add("sort-selected");
+    }
+}
 
 
 

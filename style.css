@@ -804,6 +804,7 @@ footer {
 
     .sort-container > * > *:hover {
         cursor: pointer;
+        color: #98e2e6;
     }
 
     .sort-container > * > *.sort-selected {
@@ -826,6 +827,7 @@ footer {
 
     .sort-status:hover {
         cursor: default;
+        color: var(--default-text-color);
     }
 
 
