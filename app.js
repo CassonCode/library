@@ -214,16 +214,17 @@ function sortArrayByAuthor(array) {
     array.sort((a,b) => (a.lastName > b.lastName) ? 1 : ((b.lastName > a.lastName) ? -1 : 0));
 }
 function sortArrayByRating(array) {
-
+    array.sort((a,b) => b.rating - a.rating);
 }
 function sortArrayByPageCount(array) {
-
+    array.sort((a,b) => b.pageCount - a.pageCount);
 }
 function sortArrayByDateAdded(array) {
 
 }
 
-//function to combine sort functions using if statements based on which sort button is active
+//function to combine sort functions using if statements based on which sort button is active  
+//      use filterArrays.forEach((array) => sortArrayByTitle(array)); for ex instead of just sortArrayByTitle(array)
 //      goes inside addBookToBookArrays()
 
 //sort button event listeners
@@ -232,16 +233,22 @@ sortByTitleButton.addEventListener("click", () => {
     reassignSortSelectedClass(sortByTitleButton);
     filterArrays.forEach((array) => sortArrayByTitle(array));
     displayFilteredBooks();
-    console.log(allBookObjectsArray);
 });
 sortByAuthorButton.addEventListener("click", () => {
     reassignSortSelectedClass(sortByAuthorButton);
     filterArrays.forEach((array) => sortArrayByAuthor(array));
     displayFilteredBooks();
-    console.log(allBookObjectsArray);
 });
-
-
+sortByRatingButton.addEventListener("click", () => {
+    reassignSortSelectedClass(sortByRatingButton);
+    filterArrays.forEach((array) => sortArrayByRating(array));
+    displayFilteredBooks();
+});
+sortByPageCountButton.addEventListener("click", () => {
+    reassignSortSelectedClass(sortByPageCountButton);
+    filterArrays.forEach((array) => sortArrayByPageCount(array));
+    displayFilteredBooks();
+});
 function reassignSortSelectedClass(sortButton) {
     let selectedSortOption = qs(".sort-selected");
     if (selectedSortOption !== sortButton) {
