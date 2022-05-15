@@ -227,6 +227,26 @@ function sortArrayByDateAdded(array) {
 //function to combine sort functions using if statements based on which sort button is active  
 //      use filterArrays.forEach((array) => sortArrayByTitle(array)); for ex instead of just sortArrayByTitle(array)
 //      goes inside addBookToBookArrays()
+function sortBooks(array) {
+    let selectedSortOption = qs(".sort-selected");
+    switch (selectedSortOption) {
+        case sortByTitleButton:
+            sortArrayByTitle(array);
+            break;
+        case sortByAuthorButton:
+            sortArrayByAuthor(array);
+            break;
+        case sortByRatingButton:
+            sortArrayByRating(array);
+            break;
+        case sortByPageCountButton:
+            sortArrayByPageCount(array);
+            break;
+        default:
+            sortArrayByDateAdded(array);
+            break;
+    }
+}
 
 //sort button event listeners
 //  include  1.give clicked sort button a 'selected' class  2.add sort function  3.add displayFilteredBooks()
@@ -315,6 +335,8 @@ function addBookToBookArrays() {
             //sort array
             break;
     }
+    //for each filter array
+    filterArrays.forEach((array) => sortBooks(array));
     displayFilteredBooks();
 }
 //display filtered books function that uses createBookElement
