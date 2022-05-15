@@ -883,7 +883,12 @@ footer {
         color: var(--opposite-background-color);
         /* font-weight: 400; */
     }
-
+    .book-container:hover > * > * {
+        fill: #3f989c;
+    }
+    .dark .book-container:hover > * > * {
+        fill: #abe7e9;
+    }
 
     .book-container > * {
         font-size: 15px;
