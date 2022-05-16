@@ -554,23 +554,107 @@ function deleteBook(deleteButton, bookObject, bookContainer, booksSection) {
     deleteButton.addEventListener("click", () => {
         booksSection.removeChild(bookContainer);
         allBookObjectsArray.splice(allBookObjectsArray.indexOf(bookObject), 1);
-        switch (bookObject.status) {
-            case "read":
-                readBooksArray.splice(readBooksArray.indexOf(bookObject), 1);
-                break;
-            case "currently-reading":
-                currentlyReadingBooksArray.splice(currentlyReadingBooksArray.indexOf(bookObject), 1);
-                break;
-            case "want-to-read":
-                wantToReadBooksArray.splice(wantToReadBooksArray.indexOf(bookObject), 1);
-                break;
-            default:
-                abandonedBooksArray.splice(abandonedBooksArray.indexOf(bookObject), 1);
-        }
+        removeBookFromLocalStorage(bookObject);
+        // switch (bookObject.status) {
+        //     case "read":
+        //         readBooksArray.splice(readBooksArray.indexOf(bookObject), 1);
+        //         break;
+        //     case "currently-reading":
+        //         currentlyReadingBooksArray.splice(currentlyReadingBooksArray.indexOf(bookObject), 1);
+        //         break;
+        //     case "want-to-read":
+        //         wantToReadBooksArray.splice(wantToReadBooksArray.indexOf(bookObject), 1);
+        //         break;
+        //     default:
+        //         abandonedBooksArray.splice(abandonedBooksArray.indexOf(bookObject), 1);
+        // }
         updateDisplayedBooksCount();
     });
 }
 
+//remove deleted book object from localStorage arrays
+function removeBookFromLocalStorage(bookObject) {
+    let allBookObjectsArrayLS = localStorage.getItem('allBookObjectsArrayLS') ? JSON.parse(localStorage.getItem('allBookObjectsArrayLS')) : [];
+    let allBooksArrIndex;
+    for (let i = 0; i < allBookObjectsArrayLS.length; i++) {
+        if (allBookObjectsArrayLS[i].title === bookObject.title && allBookObjectsArrayLS[i].lastName === bookObject.lastName) {
+            allBooksArrIndex = i;
+            break;
+        }
+    }
+    if (allBooksArrIndex === undefined) {
+        return;
+    }
+    allBookObjectsArrayLS.splice(allBooksArrIndex, 1);
+    localStorage.setItem('allBookObjectsArrayLS', JSON.stringify(allBookObjectsArrayLS));
+
+    switch (bookObject.status) {
+        case "read":
+            readBooksArray.splice(readBooksArray.indexOf(bookObject), 1);
+            let readBooksArrayLS = localStorage.getItem('readBooksArrayLS') ? JSON.parse(localStorage.getItem('readBooksArrayLS')) : [];
+            let readBooksArrIndex;
+            for (let i = 0; i < readBooksArrayLS.length; i++) {
+                if (readBooksArrayLS[i].title === bookObject.title && readBooksArrayLS[i].lastName === bookObject.lastName) {
+                    readBooksArrIndex = i;
+                    break;
+                }
+            }
+            if (readBooksArrIndex === undefined) {
+                return;
+            }
+            readBooksArrayLS.splice(readBooksArrIndex, 1);
+            localStorage.setItem('readBooksArrayLS', JSON.stringify(readBooksArrayLS));
+            break;
+        case "currently-reading":
+            currentlyReadingBooksArray.splice(currentlyReadingBooksArray.indexOf(bookObject), 1);
+            let currentlyReadingBooksArrayLS = localStorage.getItem('currentlyReadingBooksArrayLS') ? JSON.parse(localStorage.getItem('currentlyReadingBooksArrayLS')) : [];
+            let currentlyReadingBooksArrIndex;
+            for (let i = 0; i < currentlyReadingBooksArrayLS.length; i++) {
+                if (currentlyReadingBooksArrayLS[i].title === bookObject.title && currentlyReadingBooksArrayLS[i].lastName === bookObject.lastName) {
+                    currentlyReadingBooksArrIndex = i;
+                    break;
+                }
+            }
+            if (currentlyReadingBooksArrIndex === undefined) {
+                return;
+            }
+            currentlyReadingBooksArrayLS.splice(currentlyReadingBooksArrIndex, 1);
+            localStorage.setItem('currentlyReadingBooksArrayLS', JSON.stringify(currentlyReadingBooksArrayLS));
+            break;
+        case "want-to-read":
+            wantToReadBooksArray.splice(wantToReadBooksArray.indexOf(bookObject), 1);
+            let wantToReadBooksArrayLS = localStorage.getItem('wantToReadBooksArrayLS') ? JSON.parse(localStorage.getItem('wantToReadBooksArrayLS')) : [];
+            let wantToReadBooksArrIndex;
+            for (let i = 0; i < wantToReadBooksArrayLS.length; i++) {
+                if (wantToReadBooksArrayLS[i].title === bookObject.title && wantToReadBooksArrayLS[i].lastName === bookObject.lastName) {
+                    wantToReadBooksArrIndex = i;
+                    break;
+                }
+            }
+            if (wantToReadBooksArrIndex === undefined) {
+                return;
+            }
+            wantToReadBooksArrayLS.splice(wantToReadBooksArrIndex, 1);
+            localStorage.setItem('wantToReadBooksArrayLS', JSON.stringify(wantToReadBooksArrayLS));
+            break;
+        default:
+            abandonedBooksArray.splice(abandonedBooksArray.indexOf(bookObject), 1);
+            let abandonedBooksArrayLS = localStorage.getItem('abandonedBooksArrayLS') ? JSON.parse(localStorage.getItem('abandonedBooksArrayLS')) : [];
+            let abandonedBooksArrIndex;
+            for (let i = 0; i < abandonedBooksArrayLS.length; i++) {
+                if (abandonedBooksArrayLS[i].title === bookObject.title && abandonedBooksArrayLS[i].lastName === bookObject.lastName) {
+                    abandonedBooksArrIndex = i;
+                    break;
+                }
+            }
+            if (abandonedBooksArrIndex === undefined) {
+                return;
+            }
+            abandonedBooksArrayLS.splice(abandonedBooksArrIndex, 1);
+            localStorage.setItem('abandonedBooksArrayLS', JSON.stringify(abandonedBooksArrayLS));
+            break;
+    }    
+}
 
 
 
