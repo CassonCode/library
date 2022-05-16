@@ -555,19 +555,6 @@ function deleteBook(deleteButton, bookObject, bookContainer, booksSection) {
         booksSection.removeChild(bookContainer);
         allBookObjectsArray.splice(allBookObjectsArray.indexOf(bookObject), 1);
         removeBookFromLocalStorage(bookObject);
-        // switch (bookObject.status) {
-        //     case "read":
-        //         readBooksArray.splice(readBooksArray.indexOf(bookObject), 1);
-        //         break;
-        //     case "currently-reading":
-        //         currentlyReadingBooksArray.splice(currentlyReadingBooksArray.indexOf(bookObject), 1);
-        //         break;
-        //     case "want-to-read":
-        //         wantToReadBooksArray.splice(wantToReadBooksArray.indexOf(bookObject), 1);
-        //         break;
-        //     default:
-        //         abandonedBooksArray.splice(abandonedBooksArray.indexOf(bookObject), 1);
-        // }
         updateDisplayedBooksCount();
     });
 }
