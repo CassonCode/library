@@ -192,6 +192,7 @@ window.onload = () => {
     populateAbandonedBooksArray();
     populateWantToReadBooksArray();
     filterArrays.forEach((array) => sortBooks(array));
+    updateDisplayedBooksCount();
     displayFilteredBooks();
 }
 //put all the book objects in local storage into allBookObjectsArray
