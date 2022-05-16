@@ -781,7 +781,8 @@ footer {
         grid-template-columns: 4fr 4fr 2fr 2fr 2fr 1.5fr 1.5fr;
         padding: 40px 0 3px 10px;
         align-items: flex-end;
-        border-bottom: 3px solid var(--books-container-outline-color);
+        /* border-bottom: 3px solid var(--books-container-outline-color); */
+        border-bottom: 3px solid var(--gray-supp); 
         -webkit-transition: border-color 200ms linear;
         -ms-transition: border-color 200ms linear;
         transition: border-color 200ms linear;
