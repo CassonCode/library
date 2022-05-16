@@ -95,7 +95,7 @@ function setStarRatingToZero(arr) {
 }
 
 //also include display books function
-window.onload = () => statusDropdown.value.selected = "want-to-read";
+// window.onload = () => statusDropdown.value.selected = "want-to-read";
 
 
 
@@ -149,19 +149,6 @@ function checkifRequiredStarIsFilled(arr) {
 
     
 
-//submit button event listener
-// const addBookButton = qs(".add-book-button");
-// addBookButton.addEventListener("click", () => {
-//     checkIfAnyInputIsEmpty(inputArray);
-//     checkifRequiredStarIsFilled(starsArray);
-//     if (!inputisEmpty) {
-//         //and submit book THEN clear
-//         clearFormInfo();
-//     }
-
-// });
-
-
 //clear inputs
 function clearInputs() {
     inputArray.forEach((input) => input.value = "");
@@ -197,6 +184,62 @@ const wantToReadBooksArray = [];
 const filterArrays = [allBookObjectsArray, readBooksArray, currentlyReadingBooksArray, abandonedBooksArray, wantToReadBooksArray];
 const filterOptionsArray = [...document.getElementsByClassName("filter-option")];
 
+window.onload = () => {
+    statusDropdown.value.selected = "want-to-read";
+    populateAllBooksArray();
+    populateReadBooksArray();
+    populateCurrentlyReadingBooksArray();
+    populateAbandonedBooksArray();
+    populateWantToReadBooksArray();
+    filterArrays.forEach((array) => sortBooks(array));
+    displayFilteredBooks();
+}
+//put all the book objects in local storage into allBookObjectsArray
+function populateAllBooksArray() {
+    let allBookObjectsArrayLS = JSON.parse(localStorage.getItem("allBookObjectsArrayLS") || "[]");
+    for (let i = 0; i < allBookObjectsArrayLS.length; i++) {
+        allBookObjectsArray[i] = 0;
+    }
+    for (let i = 0; i < allBookObjectsArrayLS.length; i++) {
+        allBookObjectsArray[i] = allBookObjectsArrayLS[i];
+    }
+}
+function populateReadBooksArray() {
+    let readBooksArrayLS = JSON.parse(localStorage.getItem("readBooksArrayLS") || "[]");
+    for (let i = 0; i < readBooksArrayLS.length; i++) {
+        readBooksArray[i] = 0;
+    }
+    for (let i = 0; i < readBooksArrayLS.length; i++) {
+        readBooksArray[i] = readBooksArrayLS[i];
+    }
+}
+function populateCurrentlyReadingBooksArray() {
+    let currentlyReadingBooksArrayLS = JSON.parse(localStorage.getItem("currentlyReadingBooksArrayLS") || "[]");
+    for (let i = 0; i < currentlyReadingBooksArrayLS.length; i++) {
+        currentlyReadingBooksArray[i] = 0;
+    }
+    for (let i = 0; i < currentlyReadingBooksArrayLS.length; i++) {
+        currentlyReadingBooksArray[i] = currentlyReadingBooksArrayLS[i];
+    }
+}
+function populateAbandonedBooksArray() {
+    let abandonedBooksArrayLS = JSON.parse(localStorage.getItem("abandonedBooksArrayLS") || "[]");
+    for (let i = 0; i < abandonedBooksArrayLS.length; i++) {
+        abandonedBooksArray[i] = 0;
+    }
+    for (let i = 0; i < abandonedBooksArrayLS.length; i++) {
+        abandonedBooksArray[i] = abandonedBooksArrayLS[i];
+    }
+}
+function populateWantToReadBooksArray() {
+    let wantToReadBooksArrayLS = JSON.parse(localStorage.getItem("wantToReadBooksArrayLS") || "[]");
+    for (let i = 0; i < wantToReadBooksArrayLS.length; i++) {
+        wantToReadBooksArray[i] = 0;
+    }
+    for (let i = 0; i < wantToReadBooksArrayLS.length; i++) {
+        wantToReadBooksArray[i] = wantToReadBooksArrayLS[i];
+    }
+}
 
 const sortByTitleButton = qs(".sort-title");
 const sortByAuthorButton = qs(".sort-author");
@@ -221,7 +264,10 @@ function sortArrayByPageCount(array) {
 }
 function sortArrayByDateAdded(array) {
     //sort by day, then month, then year ???????
-    array.sort((a,b) => b.fullDate - a.fullDate);
+    array.sort((a,b) => new Date(b.fullDate) - new Date(a.fullDate));
+    // a.sort(function(a,b){
+    //     return a.plantingDate.localeCompare(b.plantingDate);
+    //   })
 }
 
 //function to combine sort functions using if statements based on which sort button is active  
@@ -316,29 +362,30 @@ function addBookToBookArrays() {
                                     pageCountInput.value);
                                     
     allBookObjectsArray.unshift(newBookObject);
-    //sort array
+    localStorage.setItem("allBookObjectsArrayLS", JSON.stringify(allBookObjectsArray));
     switch (newBookObject.status) {
         case "read":
             readBooksArray.unshift(newBookObject);
-            //sort array
+            localStorage.setItem("readBooksArrayLS", JSON.stringify(readBooksArray));
             break;
         case "want-to-read":
             wantToReadBooksArray.unshift(newBookObject);
-            //sort array
+            localStorage.setItem("wantToReadBooksArrayLS", JSON.stringify(wantToReadBooksArray));
             break;
         case "currently-reading":
             currentlyReadingBooksArray.unshift(newBookObject);
-            //sort array
+            localStorage.setItem("currentlyReadingBooksArrayLS", JSON.stringify(currentlyReadingBooksArray));
             break;
         default:
             abandonedBooksArray.unshift(newBookObject);
-            //sort array
+            localStorage.setItem("abandonedBooksArrayLS", JSON.stringify(abandonedBooksArray));
             break;
     }
     //for each filter array
     filterArrays.forEach((array) => sortBooks(array));
     displayFilteredBooks();
 }
+
 //display filtered books function that uses createBookElement
 //  put inside addToBookArrays and filter options eventListener
 function displayFilteredBooks() {
