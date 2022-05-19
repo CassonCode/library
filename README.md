@@ -1,6 +1,6 @@
 Personal library app
 
-[Live Demo](https://cassoncode.github.io/library/)
+[Live Demo](https://ben-casson.github.io/library/)
 
 
 What I learned:
