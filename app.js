@@ -21,7 +21,7 @@ let newBookRating = 0;
 let inputisEmpty = true;
 
 function setStarRating(arr) {
-        arr.forEach((starButton) => {       /////// use 'forEach'  or  '.map' ?????
+        arr.forEach((starButton) => {      
             starButton.onclick = () => {
                 for (let i = 0; i <= arr.indexOf(starButton); i++) {
                     let currentStarButton = arr[i];
