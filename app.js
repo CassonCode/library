@@ -69,7 +69,8 @@ function disableStarButtons(event) {
     let currentOption = statusDropdown.value;
     let newOption = event.target.value;
     
-    if (newOption === "currently-reading" || newOption === "want-to-read" || currentOption === "currently-reading" || currentOption === "want-to-read") {
+    if (newOption === "currently-reading" || newOption === "want-to-read" || 
+        currentOption === "currently-reading" || currentOption === "want-to-read") {
         starsArray.forEach((button) => {
             button.disabled = true;
             setStarRatingToZero(starsArray);
@@ -265,7 +266,9 @@ function sortArrayByPageCount(array) {
 }
 function sortArrayByDateAdded(array) {
     //sort by day, then month, then year ???????
-    array.sort((a,b) => new Date(b.fullDate) - new Date(a.fullDate));
+    // array.sort((a,b) => new Date(b.fullDate) - new Date(a.fullDate));
+    array.sort((a,b) => b.fullDate - a.fullDate);
+
     // a.sort(function(a,b){
     //     return a.plantingDate.localeCompare(b.plantingDate);
     //   })
@@ -332,7 +335,7 @@ function reassignSortSelectedClass(sortButton) {
 
 
 
-//create book object constructor
+//create Book object constructor
 function Book(title, firstName, lastName, status, rating, pageCount) {
     this.title = title;
     this.firstName = firstName;
