@@ -514,10 +514,12 @@ function createBookElement(bookObject) {
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
     today = mm + '/' + dd + '/' + yyyy;
-    if (!bookObject.date) {
+    if (!bookObject.date || bookObject.date === undefined || bookObject.date === null) {
         bookObject.date = today;
     }
-    bookCreationDate.innerHTML = bookObject.date;
+    // bookCreationDate.innerHTML = bookObject.date;
+    bookCreationDate.innerHTML = today;
+
     bookContainer.appendChild(bookCreationDate);
     
     //create delete button
